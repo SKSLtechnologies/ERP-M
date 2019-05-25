@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	
+  <title>Navbar</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet"> -->
+  <link href="bootstrap.css" rel="stylesheet">
+  <link href="fontawesome-free-5.8.1-web/css/all.min.css" rel="stylesheet">
+
+<!-- custom css -->
+
+<style>
+
+   body{
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    /* background-color: black; */
+    /* font-family: 'Roboto', sans-serif; */
+  } 
+
+a {
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+.bg-blue {
+  background-color:#05668D  !important;
+  /* background-image: linear-gradient(#05668D,#BAD4AA); */
+ 
+
+
+}
+
+.bg-light-green{
+ background-color:#BAD4AA;
+
+ /* background-image: linear-gradient(#05668D,#BAD4AA); */
+ /* background-image: linear-gradient(#05668D,#C5D1EB); */
+
+}
+/* li{
+  border-right:1px solid #fff;
+} */
+
+
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  
+<div class="container">
+
+    <ul class="nav nav-tabs nav-fill nav-justified-center bg-blue" id="Top_menu" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link"  href="Navbar.html"  aria-selected="true"><i class="fa fa-home"></i>&nbsp;HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="finance-tab" data-toggle="tab" href="#finance" role="tab" aria-controls="finance" aria-selected="false"><i class="fa fa-university"></i>&nbsp;FINANCE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="engineering-tab" data-toggle="tab" href="#engineering" role="tab" aria-controls="engineering" aria-selected="false"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;ENGINEERING</a>
+        </li>
+    
+        <li class="nav-item">
+            <a class="nav-link" id="hr-tab" data-toggle="tab" href="#hr" role="tab" aria-controls="hr" aria-selected="false"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;HR &amp; ADMIN</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="labor-tab" data-toggle="tab" href="#labor" role="tab" aria-controls="labor" aria-selected="false"><i class="fas fa-fist-raised"></i>&nbsp;LABOR</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="master-tab" data-toggle="tab" href="#master" role="tab" aria-controls="master" aria-selected="false"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;MASTER</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="utility-tab" data-toggle="tab" href="#utility" role="tab" aria-controls="utility" aria-selected="false"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;UTILITY</a>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="Sub_menu">
+          
+          <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          </div> -->
+          <div class="tab-pane fade" id="finance" role="tabpanel" aria-labelledby="finance-tab">
+              <!-- <nav class="navbar navbar-expand-lg bg-light"> -->
+                <ul class="nav justify-content-center bg-light-green">
+                    <li class="nav-item ml-5">
+                      <a class="nav-link" href="#" id=""><i class="fa fa-calculator"></i>&nbsp;Accounts</a></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id=""><i class="fa fa-cubes"></i>&nbsp;Inventory</a></li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#" id=""><i class="fas fa-tools"></i>&nbsp;Mechanical</a></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id=""><i class="fas fa-coins"></i>&nbsp;Client Billing</a></li>
+                  </ul>
+              <!-- </nav> -->
+          </div>
+
+          <div class="tab-pane fade" id="engineering" role="tabpanel" 
+          aria-labelledby="engineering-tab">
+          <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+          <ul class="nav justify-content-center bg-light-green">
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#" id=""><i class="fas fa-hand-holding-usd"></i>&nbsp;Project Costing</a></li>  -->
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="">Client Billing &amp; Costing</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" id="">Reports</a></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id="">Utility</a></li>
+              
+
+
+
+
+
+
+
+
+
+            </ul>
+        <!-- </nav>
+         -->
+        
+        
+        </div>
+
+          <div class="tab-pane fade" id="hr" role="tabpanel" 
+          aria-labelledby="hr-tab">
+          <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+            <ul class="nav justify-content-center bg-light-green">
+             
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="">HR &amp; Payroll Master</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="">HR &amp; Payroll Transaction</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" id="">HR &amp; Payroll reports</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" id="">Master reports</a></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id="">Utility</a></li>
+                  
+              </ul>
+            <!-- </nav> -->
+        </div>
+        
+
+        <div class="tab-pane fade" id="labor" role="tabpanel" 
+          aria-labelledby="labor-tab">
+          <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+            <ul class="nav justify-content-center bg-light-green">
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="">Labour Transaction Entry</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="">Labour Bills</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" id="">Reports</a></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id="">Master List</a></li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" id="">Utility</a></li>
+                        
+              </ul>
+              <!-- </nav> -->
+        </div>
+
+
+          <div class="tab-pane fade" id="master" role="tabpanel" 
+          aria-labelledby="master-tab">
+
+          <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+              <ul class="nav justify-content-center bg-light-green">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="">Primary Master</a></li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" id="">Account Master</a></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id="">Inventory Master</a></li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" id="">PO Master</a></li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#" id="">Labor Master</a></li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#" id="">Access Control</a></li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#" id="">User Control</a></li>
+                </ul>
+              <!-- </nav> -->
+        
+        </div>
+
+
+          <div class="tab-pane fade" id="utility" role="tabpanel" 
+          aria-labelledby="utility-tab">
+          <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+            <ul class="nav justify-content-center bg-light-green">
+              
+                        <li class="nav-item">
+                          <a class="nav-link" href="#" id="">Access Control</a></li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#" id="">User Control</a></li>
+              </ul>
+              <!-- </nav> -->
+        </div>
+ 
+        
+        </div>
+
+      
+
+        </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+
+</body>
+</html>

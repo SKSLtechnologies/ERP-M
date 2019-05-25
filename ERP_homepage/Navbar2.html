@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+     <!-- Favicon -->
+   <link rel="shortcut icon" href="assets/img/favicon.ico">
+ <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
+
+    <link rel="stylesheet" media="screen" href="vendor.min.css">
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="theme2.css">
+    <link href="fontawesome-free-5.8.1-web/css/all.min.css" rel="stylesheet">
+
+
+    <!-- Modernizr-->
+    <script src="modernizr.min.js"></script>
+
+
+<!-- custom css -->
+
+<style>
+
+
+ .bg-dark {
+    /* background-color:#05668D !important */
+    /* background-color:#08415C !important */
+    background-color:rgb(3, 11, 51) !important
+}
+.navbar-simple-ghost .navbar-nav>.nav-item>.nav-link {
+    color: whitesmoke;
+}
+.navbar-simple-ghost .navbar-nav>.nav-item:hover>.nav-link,
+.navbar-simple-ghost .navbar-nav>.nav-item.active>.nav-link {
+    /* color: rgba(255,255,255,0.65); */
+    /* color: #d0a73f; */
+    color:black;
+    background-color: #d0a73f;
+    
+}
+.nav-pills .nav-link:hover {
+    border-color: #d0a73f;
+    /* background-color: #f5f5f5 */
+    background-color: #d0a73f;
+}
+body{
+
+  background-color: rgba(173, 214, 230, 0.411);
+  
+}
+
+
+/* clock */
+
+.clock {
+    position: relative;
+    margin:-35px 0px 0 1000px;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 2px;
+}
+.date {
+    position: relative;
+    margin:-21px 0px 0 1130px;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+
+</style>
+
+  </head>
+  
+  <body>
+
+
+    
+    <!-- Navbar: Simple Ghost-->
+    <header class="navbar-wrapper navbar-boxed navbar-simple-ghost">
+      <div class="container-fluid">
+        <!-- <div class="d-table-cell align-middle pr-md-3"><a class="navbar-brand mr-1" href="Navbar2.html"><img src="assets/logo/logo2.png" alt="SKSL" style="height:50px;width: 50px;"/></a></div>
+        -->
+
+        <div class="d-table-cell w-100 align-middle pl-md-3">
+          <div class="navbar justify-content-end justify-content-lg-between">
+            <!-- Search-->
+            <!-- <form class="search-box" method="get">
+              <input type="text" id="site-search" placeholder="Type A or C to see suggestions"><span class="search-close"><i class="fe-icon-x"></i></span>
+            </form> -->
+            <!-- Main Menu-->
+            <ul class="navbar-nav nav-pills d-none d-lg-block">
+              <!-- Home-->
+              <li class="nav-item"><a class="nav-link" href="Navbar2.html"><i class="fa fa-home"></i>&nbsp;Home</a>
+              </li>
+
+               <!-- Finance-->
+              <li class="nav-item mega-dropdown-toggle"><a class="nav-link"><i class="fa fa-university"></i>&nbsp; Finance</a>
+                <div class="dropdown-menu mega-dropdown mt-3">
+                  <div class="d-flex">
+                    <div class="column">
+                      <div class="widget widget-custom-menu">
+                        <ul>
+                          <li class="dropdown-header font-weight-medium text-warning border-warning text-uppercase pl-0" ><i class="fa fa-calculator"></i>&nbsp;&nbsp;Accounts</li>
+                          <li><a class="collapsed" href="#trans-submenu" data-toggle="collapse" aria-expanded="false" id="accordion-menu">Transaction</a></li>
+                            <div id="trans-submenu" class="collapse" data-parent="#accordion-menu">
+                                <ul>
+                                  <li><a  href="#">Accounts Voucher Entry</a></li>
+                                  <li><a href="#">Party Bill Serial Entry</a></li>
+                                  <li><a href="#">Monthly Accounts Estimate</a></li>
+                                  <li><a href="#">CPM Cash</a></li>
+                                </ul>    
+                            </div>          
+                          
+                          <li><a  href="#">Compulsory reports</a></li>
+                          <li><a href="#">MIS/Director's Reports</a></li>
+                          <li><a href="#">Master List</a></li>
+                          <li><a href="#">Utility</a></li>
+                          
+                        </ul>
+                            
+                      </div>
+
+                      <!-- for transaction -->
+
+                    </div>
+                    <div class="column">
+                      <div class="widget widget-custom-menu">
+                        <ul>
+                          <li class="dropdown-header font-weight-medium text-info border-info text-uppercase pl-0"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Inventory</li>
+                          <li><a href="#">Inventory Transaction Entry</a></li>
+                          <li><a href="#">Purchasing Process</a></li>
+                          <li><a href="#">Reports</a></li>
+                          <li><a href="#">Bank Material</a></li>
+                          <li><a href="#">Master List</a></li>
+                         
+                        </ul>
+                      </div>
+                    </div>
+
+
+
+                    <div class="column">
+                      <div class="widget widget-custom-menu">
+                        <ul>
+                          <li class="dropdown-header font-weight-medium text-success border-success    text-uppercase pl-0"><i class="fas fa-tools"></i>&nbsp;&nbsp;Mechanical</li>
+                          <li><a href="#">Mechanical Data Transactions</a></li>
+                          <li><a href="#">Mechanical Master</a></li>
+                          <li><a href="#">Mechanical Reports</a></li>
+                          <li><a href="#">Master List</a></li>
+                          <li><a href="#">Utility</a></li>
+                         
+                        </ul>
+                      </div>
+                    </div>
+
+
+
+                    <div class="column">
+                      <div class="widget widget-custom-menu">
+                        <ul>
+                          <li class="dropdown-header font-weight-medium text-accent border-accent text-uppercase pl-0"><i class="fas fa-coins"></i>&nbsp;&nbsp;Client Billing</li>
+                          <li><a href="#">Client Billing &amp; Costing</a></li>
+                          <li><a href="#">Reports</a></li>
+                          <li><a href="#">Utility</a></li>
+                          
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Engineering-->
+              
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Engineering</a>
+        
+                <ul class="dropdown-menu mt-1">
+                    <li class="dropdown-header font-weight-medium text-info border-info text-uppercase pl-0">&nbsp;&nbsp;<i class="fas fa-money-bill-wave"></i>&nbsp;&nbsp;Project Costing</li>
+                  <li class="dropdown-item"><a href="#">Tender Rate Annually</a></li>
+                  <li class="dropdown-item"><a href="#">Project Reports</a></li>
+                  <li class="dropdown-item"><a href="#">Drawaings &amp; Activity</a></li>
+                  <li class="dropdown-item"><a href="#">Profile Settings</a></li>
+                 
+                </ul>
+              </li>
+
+
+              <!-- HR and admin-->
+
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;HR &amp; Admin</a>
+        
+                <ul class="dropdown-menu mt-1">
+                    <li class="dropdown-header font-weight-medium text-warning border-warning text-uppercase pl-0">&nbsp;&nbsp;<i class="fas fa-hand-holding-usd"></i>&nbsp;&nbsp;Payroll</li>
+                  <li class="dropdown-item"><a href="#">HR &amp; Payroll Master </a></li>
+                  <li class="dropdown-item"><a href="#">HR &amp; Payroll Transaction</a></li>
+                  <li class="dropdown-item"><a href="#">HR &amp; Payroll Reports</a></li>
+                  <li class="dropdown-item"><a href="#">Master Reports</a></li>
+                  <li class="dropdown-item"><a href="#">Utility</a></li>
+                 
+                </ul>
+              </li>
+              <!-- Labor-->
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fas fa-fist-raised"></i>&nbsp;Labor</a>
+                <ul class="dropdown-menu mt-1">
+                  <li class="dropdown-item"><a href="#">Labor Transaction Entry</a></li>
+                  <li class="dropdown-item"><a href="#">Labour Bills</a></li>
+                  <li class="dropdown-item"><a href="#">Reports</a></li>
+                  <li class="dropdown-item"><a href="#">Master List</a></li>
+                  <li class="dropdown-item"><a href="#">Utility</a></li>
+                 
+                </ul>
+              </li>
+              <!-- Master-->
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Master</a>
+                <ul class="dropdown-menu mt-1">
+                  <li class="dropdown-item"><a href="#">Primary Master</a></li>
+                      <li class="dropdown-item"><a href="#">Account Master</a></li>
+                      <li class="dropdown-item"><a href="#">Inventory Master</a></li>
+                      <li class="dropdown-item"><a href="#">PO Master</a></li>
+                      <li class="dropdown-item"><a href="#">Labor Master</a></li>                      
+                  
+                </ul>
+              </li>
+              <!-- Utility-->
+
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;Utility</a>
+                <ul class="dropdown-menu mt-1">
+                  
+                      <li class="dropdown-item"><a href="#">Access Control</a></li>
+                      <li class="dropdown-item"><a href="#">User Control</a></li>
+                      
+                  
+                </ul>
+              </li>
+
+
+                <!-- digital clock and date -->
+                <li>
+                  <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+                  <div id="MyDateDisplay" class="date" onload="showDate()">
+                    </div>
+                </li>
+              
+    
+            </ul>
+            <div>
+              <!-- <ul class="navbar-buttons  d-inline-block align-middle">
+                <li class="d-block d-lg-none"><a href="#mobile-menu" data-toggle="offcanvas"><i class="fe-icon-menu"></i></a></li>
+                <li><a href="#" data-toggle="search"><i class="fe-icon-search"></i></a></li>
+               
+              </ul> -->
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Page Content-->
+  
+    <div class="bg-dark" style="height: 70px;"></div>
+    
+  
+    <script src="vendor.min.js"></script>
+    <script src="theme.min.js"></script>
+
+  
+
+
+<!-- digital clock -->
+
+    <script>
+    function showTime(){
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    var time = h + ":" + m + ":" + s + " " + session;
+
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
+
+    setTimeout(showTime, 1000);
+
+}
+showTime();
+    </script>
+<script>
+
+  function showDate(){
+
+          var today = new Date();
+        var dd = today.getDate();
+
+        var mm = today.getMonth()+1; 
+        var yyyy = today.getFullYear();
+        if(dd<10) 
+        {
+            dd='0'+dd;
+        } 
+
+        if(mm<10) 
+        {
+            mm='0'+mm;
+        } 
+        today = mm+'-'+dd+'-'+yyyy;
+        document.getElementById("MyDateDisplay").innerText = today;
+
+      }
+      showDate();
+
+</script>
+
+  </body>
+</html>
