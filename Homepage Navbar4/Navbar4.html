@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+     <!-- Favicon -->
+   <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+
+    <link rel="stylesheet" media="screen" href="vendor.min.css">
+    <link rel="stylesheet" media="screen" href="theme4.css">
+    <link href="fontawesome-free-5.8.1-web/css/all.min.css" rel="stylesheet">
+
+
+    <!-- Modernizr-->
+    <script src="modernizr.min.js"></script>
+
+
+<!-- custom css -->
+
+<style>
+
+.bg-dark {
+  
+    background-color:rgb(3, 11, 51) !important
+}
+.navbar-simple-ghost .navbar-nav>.nav-item>.nav-link {
+    color: red;
+}
+
+.nav-pills .nav-link:hover {
+    border-color: #d0a73f;
+    background-color: #d0a73f;
+    color:black !important
+}
+body{
+
+  background-color: rgba(173, 214, 230, 0.411);
+  
+}
+
+.clock {
+   
+  font-size: 11px;
+    letter-spacing: 1px;
+    
+}
+.date {
+  font-size: 11px;
+    letter-spacing: 1px;
+}
+.navbar-brand {
+    display: block;
+    width: 127px;
+    color: #d0a73f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size:2rem;
+
+}
+
+</style>
+
+  </head>
+  
+  <body>
+
+
+    
+    <!-- Navbar-->
+    <header class="navbar-wrapper navbar-sticky bg-dark text-white">
+    
+        <div class="d-table-cell align-middle pr-md-3"><a class="navbar-brand mr-1" href="Navbar4.html">
+          <!-- <img src="img/logo/logo-dark.png"/> -->
+          SKSL</a></div>
+       
+        <div class="d-table-cell w-100 align-middle pl-md-3">
+
+            <div class="navbar-top d-none d-lg-flex justify-content-end align-items-center">
+                  <ul class="list-inline mb-0">
+                      <li>
+                        <!-- <i class="fas fa-clock"></i> -->
+                        <span id="MyClockDisplay" class="clock" onload="showTime()"></span>
+                      </li>
+
+                      <li>
+                        <!-- <i class="fas fa-calendar-week"></i> -->
+                        <span id="MyDateDisplay" class="date" onload="showDate()"></span>
+                        
+                      </li>
+                    <li class="dropdown-toggle mr-2"><a class="navbar-link" href="#"><i class="fas fa-user"></i>Test User</a>
+                      <div class="dropdown-menu right-aligned text-center" style="min-width: 100px;">
+                              <a class="dropdown-item" href="#">Log out</a>
+                      </div>
+                    </li>
+                   
+                  </ul>
+                </div>
+            
+
+          <div class="navbar justify-content-end justify-content-lg-between">
+           
+            <!-- Main Menu-->
+            <ul class="navbar-nav nav-pills d-none d-lg-block">
+              <!-- Home-->
+              <li class="nav-item"><a class="nav-link" href="Navbar4.html" style="color: #fff;"><i class="fa fa-home"></i>&nbsp;Home</a>
+              </li>
+               <!-- Finance-->
+               <li class="nav-item mega-dropdown-toggle"><a class="nav-link"><i class="fa fa-university"></i>&nbsp; Finance</a>
+                <div class="dropdown-menu mega-dropdown ml-5">
+                  <div class="d-flex">
+                    <div class="column">
+                      <div class="widget widget-custom-menu">
+                        <ul>
+                         
+                          <li class="dropdown-header font-weight-medium text-warning border-warning text-uppercase pl-0 collapsed" href="#trans-submenu" data-toggle="collapse" aria-expanded="false"><i class="fa fa-calculator"></i>&nbsp;&nbsp;Accounts</li>
+                          <div id="trans-submenu" class="collapse">
+                            <ul>
+                              <li><a  href="#">Voucher Entry</a></li>
+                              <li><a href="#">Party Bill </a></li>
+                              <li><a href="#">Bank  Gurantee</a></li>
+                              <li><a href="#">RA Bill</a></li>
+                              <li><a  href="#">Fixed Deposit</a></li>
+                              <li><a href="#">Insurance Policy</a></li>
+                              <li><a href="#">Finance Statement Report</a></li>
+                              <li><a href="#">Finance MIS Report</a></li>
+                            </ul>    
+                        </div> 
+
+                          <li class="dropdown-header font-weight-medium text-info border-info text-uppercase pl-0 collapsed" href="#inv-submenu" data-toggle="collapse" aria-expanded="false"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Inventory</li>
+                          <div id="inv-submenu" class="collapse">
+                              <ul>
+                                <li><a  href="#">Voucher Entry</a></li>
+                                <li><a href="#">Party Bill </a></li>
+                                <li><a href="#">Bank  Gurantee</a></li>
+                                <li><a href="#">RA Bill</a></li>
+                                <li><a  href="#">Fixed Deposit</a></li>
+                                <li><a href="#">Insurance Policy</a></li>
+                                <li><a href="#">Finance Statement Report</a></li>
+                                <li><a href="#">Finance MIS Report</a></li>
+                              </ul>    
+                          </div> 
+
+                          <li class="dropdown-header font-weight-medium text-success border-success text-uppercase pl-0 collapsed" href="#mech-submenu" data-toggle="collapse" aria-expanded="false" ><i class="fa fa-coins"></i>&nbsp;&nbsp;Mechanical</li>
+                          <div id="mech-submenu" class="collapse">
+                              <ul>
+                                <li><a  href="#">Voucher Entry</a></li>
+                                <li><a href="#">Party Bill </a></li>
+                                <li><a href="#">Bank  Gurantee</a></li>
+                                <li><a href="#">RA Bill</a></li>
+                                <li><a  href="#">Fixed Deposit</a></li>
+                                <li><a href="#">Insurance Policy</a></li>
+                                <li><a href="#">Finance Statement Report</a></li>
+                                <li><a href="#">Finance MIS Report</a></li>
+                              </ul>    
+                          </div> 
+
+                          <li class="dropdown-header font-weight-medium text-accent border-accent text-uppercase pl-0 collapsed" href="#cb-submenu" data-toggle="collapse" aria-expanded="false"><i class="fa fa-money-bill-wave"></i>&nbsp;&nbsp;Client Billing</li>
+                          <div id="cb-submenu" class="collapse">
+                              <ul>
+                                <li><a  href="#">Voucher Entry</a></li>
+                                <li><a href="#">Party Bill </a></li>
+                                <li><a href="#">Bank  Gurantee</a></li>
+                                <li><a href="#">RA Bill</a></li>
+                                <li><a  href="#">Fixed Deposit</a></li>
+                                <li><a href="#">Insurance Policy</a></li>
+                                <li><a href="#">Finance Statement Report</a></li>
+                                <li><a href="#">Finance MIS Report</a></li>
+                              </ul>    
+                          </div> 
+                          
+
+
+                        
+                        </ul>
+                            
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </li>
+             
+              <!-- Engineering-->
+              
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Engineering</a>
+        
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header font-weight-medium text-info border-info text-uppercase pl-0">&nbsp;&nbsp;Project Costing</li>
+                  <li class="dropdown-item"><a href="#">Tender Rate Annually</a></li>
+                  <li class="dropdown-item"><a href="#">Project Reports</a></li>
+                  <li class="dropdown-item"><a href="#">Drawings &amp; Activity</a></li>
+                  <li class="dropdown-item"><a href="#">Profile Settings</a></li>
+                 
+                </ul>
+              </li>
+
+
+              <!-- HR and admin-->
+
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;HR &amp; Admin</a>
+        
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header font-weight-medium text-warning border-warning text-uppercase pl-0">&nbsp;&nbsp;Payroll</li>
+                  <li class="dropdown-item"><a href="#">HR &amp; Payroll Master </a></li>
+                  <li class="dropdown-item"><a href="#">HR &amp; Payroll Transaction</a></li>
+                  <li class="dropdown-item"><a href="#">HR &amp; Payroll Reports</a></li>
+                  <li class="dropdown-item"><a href="#">Master Reports</a></li>
+                  <li class="dropdown-item"><a href="#">Utility</a></li>
+                 
+                </ul>
+              </li>
+              <!-- Labor-->
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fas fa-fist-raised"></i>&nbsp;Labor</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item"><a href="#">Labor Transaction Entry</a></li>
+                  <li class="dropdown-item"><a href="#">Labour Bills</a></li>
+                  <li class="dropdown-item"><a href="#">Reports</a></li>
+                  <li class="dropdown-item"><a href="#">Master List</a></li>
+                  <li class="dropdown-item"><a href="#">Utility</a></li>
+                 
+                </ul>
+              </li>
+              <!-- Master-->
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Master</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item"><a href="#">Primary Master</a></li>
+                      <li class="dropdown-item"><a href="#">Account Master</a></li>
+                      <li class="dropdown-item"><a href="#">Inventory Master</a></li>
+                      <li class="dropdown-item"><a href="#">PO Master</a></li>
+                      <li class="dropdown-item"><a href="#">Labor Master</a></li>                      
+                  
+                </ul>
+              </li>
+              <!-- Utility-->
+
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;Utility</a>
+                <ul class="dropdown-menu">
+                  
+                      <li class="dropdown-item"><a href="#">Access Control</a></li>
+                      <li class="dropdown-item"><a href="#">User Control</a></li>
+                      
+                  
+                </ul>
+              </li>          
+    
+            </ul>
+            <div>
+            
+             
+            </div>
+          </div>
+        </div>
+    
+    </header>  
+  
+    <script src="vendor.min.js"></script>
+    <script src="theme.min.js"></script>
+
+
+
+<!-- time and date display -->
+
+    <script>
+    function showTime(){
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    var time = h + ":" + m + ":" + s + " " + session;
+
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
+
+    setTimeout(showTime, 1000);
+
+}
+showTime();
+    </script>
+<script>
+
+  function showDate(){
+
+          var today = new Date();
+        var dd = today.getDate();
+
+        var mm = today.getMonth()+1; 
+        var yyyy = today.getFullYear();
+        if(dd<10) 
+        {
+            dd='0'+dd;
+        } 
+
+        if(mm<10) 
+        {
+            mm='0'+mm;
+        } 
+        today = dd+'-'+mm+'-'+yyyy;
+        document.getElementById("MyDateDisplay").innerText = today;
+
+      }
+      showDate();
+
+</script>
+
+  </body>
+</html>
