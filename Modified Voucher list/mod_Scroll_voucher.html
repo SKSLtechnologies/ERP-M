@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	
+  <title>Mod Scroll Vouchers</title>
+
+  <link href="app2.css" rel="stylesheet">
+  <link href="floating-labels2.css" rel="stylesheet">
+  
+  <!-- custom CSS -->
+<style>
+body{
+    background:#fff;
+}
+ .custom-control-input:checked~.custom-control-label:before {
+
+        color:#fff;
+    background-color: #05668D;
+    border-color:  #9BC4CB;
+  
+}
+
+.btn-primary
+ {
+         color:#fff;
+         background-color: #05668D;
+         border-color: #05668D;
+    
+} 
+.btn-primary:hover {
+  
+       
+         background-color: #064789;
+         border-color: #064789;
+ 
+}
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: 0 0 0 0 #05668D;
+}
+.select2-container--bootstrap4 .select2-results__option--highlighted[aria-selected] {
+    background-color:  #05668D;
+    color: #fff;
+}
+
+ #Acc_table > table,
+ #Mat_table > table,
+ #Mec_table >table {
+        position: relative;
+    background-color:  #05668D;
+    color:#fff;
+
+}
+
+.font-weight-bolder {
+    font-weight: 1000;
+}
+
+/* scroll effect on table */
+       
+.scrollbar{
+       
+position: relative;
+margin-top: -18px;
+height: 100px;
+overflow-y: auto;
+}
+.scrollbar table tbody tr td{
+        word-wrap: break-word;
+
+}
+.table-hover1 tr:hover {
+  color: black;
+  background-color:  #9BC4CB;
+  
+
+}
+
+/* disabled button */
+.btn-primary.disabled,
+.btn-primary:disabled{
+    color: #fff;
+    background-color: rgb(128, 125, 125);
+    border-color:  rgb(150, 146, 146);
+}
+table{
+        table-layout: fixed;
+        border-collapse: collapse;
+}
+
+</style>	
+</head>
+
+<body>
+
+  <div class="container">
+      
+    <!-- common header option for all three Vouchers -->
+
+        <form class="p-2 mb-2 text-dark" style="background-color:#62B6CB;">
+                <div class="form-row">
+                    <div class="col-md-2">
+                            <label class="form-label">Location code</label>
+                                <select class="form-control select2" data-toggle="select2">
+                                        <option value="Kolkata">Kolkata</option>
+                                        <option value="Bilaspur">Bilaspur</option>
+                                        <option value="Durgapur">Durgapur</option>
+                                        <option value="JharKhand">Jharkhand</option>
+                                        <option value="New Delhi">New Delhi</option>
+                                        <option value="Nagpur">Nagpur</option>
+                                </select>
+
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label">Project code</label>
+                                <select class="form-control select2" data-toggle="select2"> 
+                                        <option value="084">084</option>
+                                        <option value="011">011</option>
+                                        <option value="161">161</option>
+                                        <option value="165">165</option>
+                                        <option value="168">168</option>
+                                        <option value="169">169</option>     
+                                </select>
+
+                        </div>
+
+                        <div class="col-md-2 offset-md-4">
+                                <label class="form-label">Voucher No</label>
+                                <input type="text" class="form-control" id="VrNo">
+                        </div>
+                                    
+                            <div class="col-md-2">        
+                                <label class="form-lable">Voucher date</label>
+                                <input class="form-control" type="text" id="datesingle" data-mask="date"/>
+                        </div>
+
+                </div>
+        </form>
+        
+      <!-- inline radio buttons -->
+
+      <form class="mb-2">
+
+        <div class="form-row">
+              
+              <div class="offset-3 col-md-2">
+                    <div class="custom-control custom-radio">
+                            <input type="radio" id="AccVoucher" name="customRadio" class="custom-control-input" onclick="Display();">
+                            <label class="custom-control-label font-weight-bolder" for="AccVoucher">Accounts Voucher</label>
+                    </div>                  
+                    
+            </div>
+                 
+        
+            <div class="col-md-2">
+                    <div class="custom-control custom-radio">
+                            <input type="radio" id="MatVoucher" name="customRadio" class="custom-control-input" onclick="Display();">
+                            <label class="custom-control-label font-weight-bolder" for="MatVoucher">Material Voucher</label>
+                    </div>
+            </div>
+        
+           
+            <div class="col-md-3">
+                    <div class="custom-control custom-radio">
+                            <input type="radio" id="MecVoucher" name="customRadio" class="custom-control-input" onclick="Display();">
+                            <label class="custom-control-label font-weight-bolder" for="MecVoucher">Mechanical Voucher</label>
+                    </div>
+            </div>
+          
+        </div>
+       </form>
+   
+
+      <!-- display  accounts voucher -->
+  
+        <div id="if_AV" style="display:none">
+        <div class="card">
+                <div class="card-header text-white" style="background-color: #05668D ;">
+                        <div class="row no-gutters">
+                                <div class="col-md-4">SRL No.<span id="A_srl_no">1</span> &nbsp; ACCOUNTS VOUCHER ENTRY</div>
+                                <div class="offset-3 col-md-2">
+                                        <div class="form-inline">
+                                                        <label>CB code&nbsp;</label>
+                                                        <select class="custom-select custom-select-sm">
+                                                                <option selected>Select</option>
+                                                                <option value="1">one</option>
+                                                                <option value="2">two</option>
+                                                                <option value="3">three</option>
+                                                                <option value="4">four</option>
+                                                        </select>
+                                                
+                                        </div>
+                                 </div>
+                                <div class="col-md-3">
+                                        <div class="form-inline">
+                                                <label>Party Balance &nbsp;</label>
+                                                <input  class="form-control w-50" name="party balance">
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+            <div class="card-body">
+            
+                        <form id="AccVoucherForm" name="form1">
+
+                            
+                                            <div class="form-row no-gutters">
+                                                <div class="col-md-2">
+                                                        <div class="form-label-group">
+                                                                <input placeholder="A/C code" list="SelectedAccountcode" id="Account_code">
+                                                                <label>A/C code</label>
+                                                                <datalist id="SelectedAccountcode">
+                                                                    <option value="one"></option>
+                                                                    <option value="two"></option>
+                                                                    <option value="three"></option>
+                                                                    <option value="four"></option>
+                                                                    <option value="five"></option>
+                                                                </datalist>
+                                                        </div>
+                                                </div>
+                    
+                                            
+                                                <div class="col-md-2">
+                                                    <div class="form-label-group">
+                                                            <input placeholder="Party code" type="text" id="Party_code">
+                                                            <label>Party code</label>
+                                                    </div>
+                                                    
+                                                </div>
+                    
+                    
+                                            <div class="col-md-4">
+                                                <div class="form-label-group">
+                                                        <input type="text" placeholder="Narration" id="A_Narration">
+                                                        <label>Narration</label>
+                                                                
+                                                </div>
+                                                
+                                            </div>    
+                                            
+                                            <!-- <button class="btn btn-primary" type="submit">Submit form</button> -->
+                    
+                                            <div class="col-md-2">
+                                                        <div class="form-label-group">
+                                                                        <input  type="text" placeholder="Amount" id="Amount">
+                                                                        <label>Amount</label>
+                                                        </div>
+                                                            
+                                                </div>
+
+                                                <div class="col-md-1">
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" id="Debitf" name="Amount" class="custom-control-input" data-toggle="modal" data-target="#Modal" value="">
+                                                                <label class="custom-control-label" for="Debitf">Debit</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" id="Creditf" name="Amount" class="custom-control-input" value="">
+                                                                <label class="custom-control-label" for="Creditf">Credit</label>
+                                                        </div>
+                                                                    
+                                                </div>
+
+                        
+                                        </div>
+                            
+                                    
+                                <!-- end of first group -->
+
+                                
+                                    <div class="form-row no-gutters">
+                                            <div class="col-md-2">
+                                                    <div class="form-label-group">
+                                                            <input  placeholder="Chq/DD no" type="text" id="Cheque_no">
+                                                            <label>Chq/DD no</label>                    
+                                                    </div>
+                                            </div>   
+                                
+                                            <div class="col-md-2">
+                                                    <div class="form-label-group"> 
+                                                            <input  type="text" data-mask="date" id="Cheque_date" placeholder="DD/MM/YYYY" />
+                                                            <label>Chq date</label>
+                                                    </div>
+                                                </div>   
+                                        
+                                                <div class="col-md-2">
+                                                        <div class="form-label-group">
+                                                                <input placeholder="Bill no" type="text" id="A_Bill_no">
+                                                                <label>Bill no</label>                    
+                                                        </div>
+                                                </div>  
+                                                
+                                                
+                                                <div class="col-md-2">
+                                                        <div class="form-label-group"> 
+                                                                <input type="text" data-mask="date" id="Bill_date" placeholder="DD/MM/YYYY" />
+                                                                <label>Bill date</label>
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                        <div class="form-label-group">
+                                                                                <input placeholder="OH func"  id="OH_func">
+                                                                                <label>OH func</label>
+                                                                        </div>               
+                                                                </div>
+                                                        </div>    
+
+
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                <div class="form-label-group">
+                                                                                        <input placeholder="OH unit"  id="OH_unit">
+                                                                                        <label>OH unit</label>
+                                                                                </div>               
+                                                                        </div>
+                                                                </div>  
+
+                                        </div>      
+                                
+                        
+                                <!-- end of second group -->
+                                
+                    
+                                <div class="form-row no-gutters">  
+
+                                                <div class="col-md-2">
+                                                        <div class="form-label-group">
+                                                                <div class="form-label-group">
+                                                                        <input placeholder="Bank"  id="Bank">
+                                                                        <label>Bank</label>
+                                                                    </div>               
+                                                                </div>
+                                                    </div> 
+            
+                                                    <div class="col-md-2">
+                                                            <div class="form-label-group">
+                                                                        <input placeholder="TDS no" type="text" id="TDS_no">
+                                                                    <label>TDS no</label>                    
+                                                            </div>
+                                                    </div>   
+
+                    
+                                            <div class="col-md-2">
+                                                <div class="form-label-group">
+                                                        <input placeholder="Asset id" list="hosting-plan" id="Asset_id">
+                                                        <label>Asset id</label>
+                                                        <datalist name="SelectedAssetId">
+                                                                <option value="one"></option>
+                                                                <option value="two"></option>
+                                                                <option value="three"></option>
+                                                                <option value="four"></option>
+                                                                <option value="five"></option>
+                                                        </datalist>
+                                                </div>
+                                            </div>
+                    
+                                            <div class="col-md-2">
+                                                    <div class="form-label-group">
+                                                            <input  placeholder="MRN No" type="text"  id="MRN_no">
+                                                            <label>MRN no</label>                    
+                                                    </div>
+                                            </div>  
+
+                                            <div class="col-md-2">
+                                                        <div class="form-label-group"> 
+                                                                <input type="text" data-mask="date" id="MRN_date" placeholder="DD/MM/YYYY" />
+                                                                <label>MRN date</label>
+                                                        </div>
+                                                </div>  
+                                                
+                                                <div class="col-md-2">
+                                                        <div class="form-label-group">
+                                                                <input placeholder="PO no" type="text" id="PO_no">
+                                                                <label>PO no</label>                    
+                                                        </div>
+                                                </div>   
+                                            
+
+                                    
+                            </div>
+                            
+                    <!-- end of third group -->
+                    
+                        <div class="form-row no-gutters">        
+                                        <div class="col-md-2">
+                                                <div class="form-label-group"> 
+                                                        <input  type="text" data-mask="date" id="PO_date" placeholder="DD/MM/YYYY" />
+                                                        <label>PO date</label>
+                                                </div>
+                                        </div>   
+                                        <div class="col-md-2">
+                                                <div class="form-label-group">
+                                                        <input placeholder="Bill srl no" type="text" id="Bill_srl_no">
+                                                        <label>Bill srl no</label>                    
+                                                </div>
+                                        </div> 
+
+                                        <div class="col-md-2">
+                                                        <div class="form-label-group">
+                                                                <input placeholder="Exp party" type="text" id="Exp_code">
+                                                                <label>Exp party</label>
+                                                        </div>
+                                        </div> 
+
+                                    
+                                        <div class="col-md-2"> 
+                                                        <div class="custom-control custom-checkbox mt-2">
+                                                                <input type="checkbox" class="custom-control-input" id="Audited">
+                                                                <label class="custom-control-label" for="Audited">Audited</label>
+                                                        </div>
+                                                </div> 
+                                                
+                                                <div class="col-md-2">
+                                                        
+                                                        <div class="custom-control custom-checkbox mt-2">
+                                                                <input type="checkbox" class="custom-control-input" id="Registered">
+                                                                <label class="custom-control-label" for="Registered">Registered</label>
+                                                        </div>
+                                                </div> 
+
+                                                
+                                <div class="col-md-2">
+                                        
+                                <input type="button" value="Add Voucher" id="A_AddVoucherBtn" class="btn btn-primary mt-1" />
+                                </div>              
+                        </div>
+                    <!-- end of fourth group -->  
+                    
+                        <!-- table that displays form elements -->
+                                        <div id="Acc_table" style="display:none" class="mt-2">
+                                            
+                                                <table class="table table-sm table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                                <th>Srl</th>
+                                                                <th>A/C code</th>
+                                                                <th>Party code</th>
+                                                                <th>Narration</th>
+                                                                <th>Chq/DD no</th>
+                                                                <th>Chq date</th>
+                                                                <th>Bill no</th>
+                                                                <th>Bill date</th>
+                                                                <th>GST no</th>
+                                                                <th>Debit</th>
+                                                                <th>Credit</th>
+                                                
+                                                        </tr>
+                                                        </thead>
+                                                
+                                                </table>
+
+                                            <!-- scrollable table rows -->
+                                            <div class="scrollbar">
+                                                <table class="table table-sm table-bordered table-hover1" id="A_display_table">
+                                                        <tbody>
+                                                                
+                                                        </tbody>
+                                                 </table>
+                                            </div>
+                                          
+                                </div>
+                                                         
+             
+                    <!-- Modal for GST details-->
+                        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title">GST details &amp; Expense for party</h5>
+                                
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                            <div class="form-inline">
+                                                            <!-- <div class="form-group"> -->
+                                                            <label>GST No &nbsp;</label>
+                                                            <input  class="form-control w-25" id="GST_no">
+                                                            <!-- </div> -->
+                                    
+                                            </div>
+                                            <br>
+                                    
+                                <form>
+
+                                            <div class="form-row no-gutters">
+                                                    
+                                                
+                                                    <div class="col-md-4">
+                                                                    <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id= "GST_paid">
+                                                                            <label class="custom-control-label" for="GST_paid" style="font-size:12px;">GST paid</label>
+                                                                    </div>
+                                                            </div>  
+                                                            
+                                                            <div class="col-md-4">
+                                                                            <div class="custom-control custom-checkbox">
+                                                                                <input type="checkbox" class="custom-control-input" id="Eligible">
+                                                                                <label class="custom-control-label" for="Eligible" style="font-size:12px;">Eligible</label>
+                                                                        </div>
+                                                                </div>  
+                                                
+                            
+                                                            <div class="col-md-4">
+                                                                    <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="Reverse_charges">
+                                                                            <label class="custom-control-label" for="Reverse_charges" style="font-size:12px;">Reverse charges</label>
+                                                                    </div>
+                                                            </div>   
+
+                                            </div>
+                                            <br>
+                                            <div class="form-row no-gutters">
+                                                        <div class="col-md-3">
+                                                                        <div class="form-label-group">
+                                                                                <input class="border-bottom" id="Machine_code">
+                                                                                <label>M/C code</label>
+                                                                        </div>
+                                                                </div> 
+                                                        
+                                                                                    
+                                                        <div class="col-md-3">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" list="SelectedPerson" id="Signed_by">
+                                                                        <label>Signed by</label>
+                                                                        <datalist id="SelectedPerson">
+                                                                                <option value="one"></option>
+                                                                                <option value="two"></option>
+                                                                                <option value="three"></option>
+                                                                                <option value="four"></option>
+                                                                                <option value="five"></option>
+                                                                        </datalist>
+                                                                </div>
+                                                        </div>
+                                                                                        
+                                                        <div class="col-md-3">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" id="State_code">
+                                                                        <label>State cd</label>
+                                                                </div>
+                                                        </div> 
+
+
+                                                    <div class="col-md-3">
+                                                            <div class="form-label-group">
+                                                                    <input class="border-bottom" id="Composite">
+                                                                    <label>Composite</label>
+                                                            </div>
+                                                    </div> 
+                                                
+                                            </div>      
+                                                    
+                                </form>
+                                    
+                                    </div>
+
+                                <div class="modal-footer">
+                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                              
+                                </div>
+
+                            </div>
+                            </div>
+                        </div>
+
+                    <!-- end of modal -->
+
+                        </form>
+            </div>
+        </div>
+
+        <input class="btn btn-primary offset-5 mt-n4" type="submit" id="A_SubmitBtn" value="Submit Voucher" disabled>
+
+        </div>
+
+
+    <!-- display material voucher -->
+
+        <div id="if_MV" style="display:none">
+                <div class="card">
+                        <div class="card-header text-white" style="background-color: #05668D ;">
+                                <div class="row no-gutters">
+                                        <div class="col-md-3">SRL No.<span id="M_srl_no">1</span> &nbsp; MATERIAL RECEIPT ENTRY</div>
+                                        <div class="offset-4 col-md-2">
+                                                        <div class="form-inline">
+                                                                        <label>Voucher code&nbsp;</label>
+                                                                        <select class="custom-select custom-select-sm">
+                                                                                <option selected>Select</option>
+                                                                                <option value="1">RA</option>
+                                                                                <option value="2">RO</option>
+                                                                                <option value="3">RC</option>
+                                                                                <option value="4">RP</option>
+                                                                        </select>
+                                                                
+                                                        </div>
+                                                 </div>
+                                                <div class="col-md-2">
+                                                                <div class="form-inline">
+                                                                        <label>Party code&nbsp;</label>
+                                                                        <select class="custom-select custom-select-sm">
+                                                                                <option selected>Select</option>
+                                                                                <option value="1">one</option>
+                                                                                <option value="2">two</option>
+                                                                                <option value="3">three</option>
+                                                                                <option value="4">four</option>
+                                                                        </select>
+                                                                        
+                                                                </div>
+                                                </div>
+
+
+
+
+                                       
+                                </div>
+                        </div>
+
+                <div class="card-body">
+                                <form id="MatVoucherForm">
+                                        <div class="form-row no-gutters">
+
+                                        <div class="col-md-2">
+                                                        <div class="form-label-group">
+                                                                <input placeholder="Item code" list="SelectedItemcode" id="Item_code">
+                                                                <label>Item code</label>
+                                                                <datalist id="SelectedItemcode">
+                                                                        <option value="one"></option>
+                                                                        <option value="two"></option>
+                                                                        <option value="three"></option>
+                                                                        <option value="four"></option>
+                                                                        <option value="five"></option>
+                                                                </datalist>
+                                                        </div>
+                                        </div>
+                        
+                                                
+                                                <div class="col-md-4">
+                                                        <div class="form-label-group">
+                                                                <div class="form-label-group">
+                                                                <input  placeholder="Narration" id="M_Narration">
+                                                                        <label>Narration</label>
+                                                                </div>               
+                                                        </div>
+                                                </div>    
+
+                                                <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                        <div class="form-label-group">
+                                                                                <input placeholder="Unit code"  id="Unit_code">
+                                                                                <label>Unit code</label>
+                                                                        </div>               
+                                                                </div>
+                                                        </div>    
+
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                <div class="form-label-group">
+                                                                                        <input placeholder="Quantity"  id="Quantity">
+                                                                                        <label>Quantity</label>
+                                                                                </div>               
+                                                                        </div>
+                                                        </div>    
+
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                <div class="form-label-group">
+                                                                                        <input placeholder="Challan rate"  id="Chal_rate">
+                                                                                        <label>Challan rate</label>
+                                                                                </div>               
+                                                                        </div>
+                                                        </div>    
+                                                
+                                                
+                                
+                                                </div>
+                                        
+                                        <!-- end of first group -->
+
+                                        <div class="form-row no-gutters">
+                                                        <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                        <div class="form-label-group">
+                                                                                <input placeholder="Land value"  id="Land_val" onkeyup="multiply();">
+                                                                                <label>Land value</label>
+                                                                        </div>               
+                                                                </div>
+                                                        </div>    
+                                        
+                                                        <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                        <div class="form-label-group">
+                                                                                <input class="launch-modal" placeholder="Taxes"  id="Taxes" onkeyup="mat_modal();">
+                                                                                <label>Taxes</label>
+                                                                        </div>               
+                                                                </div>
+                                                        </div>    
+                                                
+                                                        <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                                <input type="text" placeholder="Trans Amt" id="Trans_amt">
+                                                                                <label>Trans Amt</label>
+                                                                </div>
+                                                                        
+                                                        </div>
+                                                        
+                                                
+                                                        <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                                <input type="text" placeholder="GST Amt" id="GST_amt">
+                                                                                <label>GST Amt</label>
+                                                                </div>
+                                                                        
+                                                        </div>
+
+                                                        <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text" placeholder="I-GST Amt" id="IGST_amt">
+                                                                        <label>I-GST Amt</label>
+                                                                </div>
+                                                                                
+                                                        </div>
+
+                                                        <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                        <div class="form-label-group">
+                                                                                <input placeholder="GST Id"  id="GST_id">
+                                                                                <label>GST Id</label>
+                                                                        </div>               
+                                                                </div>
+                                                        </div>    
+
+
+                        
+                                                </div>      
+                        
+                                        <!-- end of second group -->
+                                        <div class="form-row no-gutters">
+                                                       
+
+                                                        <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                        <div class="form-label-group">
+                                                                                <input class="border-bottom" placeholder="GST state"  id="GST_state">
+                                                                                <label>GST state</label>
+                                                                        </div>               
+                                                                </div>
+                                                        </div> 
+
+                                                        <div class="col-md-2">
+                                                                <div class="input-group input-group-sm mt-2">
+                                                                        <div class="input-group-prepend">
+                                                                                <span class="input-group-text" >Total</span>
+                                                                        </div>
+                                                                        <input id="Total" class="form-control" readonly>
+                                                                </div>                   
+                                                        </div>
+                                                        
+                                                        <div class="col-md-2 offset-6">
+                                                                <input type="button" value="Add Voucher" id="M_AddVoucherBtn" class="btn btn-primary mt-1" />
+                                                                </div>              
+                                         </div>
+
+                                        <!-- end of third group -->
+                                        <!-- table that displays form elements -->
+                                        
+                                <div id="Mat_table" style="display:none" class="mt-2">
+
+                                        <table class="table table-sm table-bordered">
+                                                <thead>
+                                                        <tr>
+                                                                <th>Srl</th>
+                                                                <th>Item code</th>
+                                                                <th>Narration</th>
+                                                                <th>Unit code</th>
+                                                                <th>Quantity</th>
+                                                                <th>Challan rate</th>
+                                                                <th>Land value</th>
+                                                                <th>Taxes</th>       
+                                                                <th>GST Amt</th>     
+                                                                <th>I-GST Amt</th>     
+                                                                <th>Total</th>
+                                                        </tr>
+                                                </thead>
+                                        
+                                        </table>
+
+                                    <!-- scrollable table rows -->
+                                    <div class="scrollbar">
+                                                <table class="table table-sm table-bordered table-hover1" id="M_display_table">
+                                                        <tbody>
+                                                                        
+                                                        </tbody>
+                                                </table>
+                                  </div>
+                                  
+                        
+                                                
+                                                                
+                        </div>
+
+                <!-- Modal for Tax details-->
+                <div class="modal fade" id="M_Tax_modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title">Material Tax Details</h5>
+                            
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                
+                            <form>
+                                        <div class="form-row no-gutters">
+                                                <div class="col-md-4">
+                                                        <div class="form-label-group">
+                                                                <input class="border-bottom"  type="text" id="M_Bill_no">
+                                                                <label>Bill no</label>                    
+                                                        </div>
+                                                </div>  
+                                                        
+                                                        
+                                                <div class="col-md-4">
+                                                        <div class="form-label-group"> 
+                                                                <input class="border-bottom" type="text" data-mask="date" id="Bill_date" />
+                                                                <label>Bill date</label>
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                        <div class="form-label-group">
+                                                                <input class="border-bottom" type="text" id="Challan_no">
+                                                                <label>Challan no</label>             
+                                                        </div>
+                                                </div>  
+                                        </div>
+                                        <br>
+                                        <div class="form-row no-gutters">                                              <div class="col-md-4">
+                                                        <div class="form-label-group"> 
+                                                                <input class="border-bottom" type="text" data-mask="date" id="Challan_date"/>
+                                                                <label>Challan date</label>
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                        <div class="form-label-group">
+                                                                <input class="border-bottom" type="text" id="Other_amt">
+                                                                <label>Other Amount</label>
+                                                        </div>
+                                                                        
+                                                </div>
+
+                                            
+                                        </div>      
+                                                
+                            </form>
+                                
+                        </div>
+
+                        <div class="modal-footer">
+                                <input type="button" value="Save" id="M_Tax_Modal_submit" class="btn btn-primary" />
+                        </div>
+
+                </div>
+             </div>
+                 </div>
+                <!-- end of modal -->
+                                
+                </form>
+
+                </div>
+         
+                 </div>
+                 <input class="btn btn-primary offset-5 mt-n4" type="submit" id="M_SubmitBtn" value="Submit Voucher" disabled>
+        
+        </div>
+
+    <!-- display mechanical voucher -->
+
+        <div id="if_MeV" style="display:none;">
+                <div class="card">
+                        <div class="card-header text-white" style="background-color: #05668D ;">
+                                <div class="row no-gutters">
+                                        <div class="col-md-4">SRL No.<span id="Me_srl_no">1</span> &nbsp; MECHANICAL RECEIPT ENTRY</div>
+                                <div class="offset-3 col-md-2">
+                                                <div class="form-inline">
+                                                                <label>Voucher code&nbsp;</label>
+                                                                <select class="custom-select custom-select-sm">
+                                                                        <option selected>Select</option>
+                                                                        <option value="1">RA</option>
+                                                                        <option value="2">RO</option>
+                                                                        <option value="3">RC</option>
+                                                                        <option value="4">RP</option>
+                                                                </select>
+                                                        
+                                                </div>
+                                                </div>
+                                        <div class="col-md-2">
+                                                        <div class="form-inline">
+                                                                <label>Party code&nbsp;</label>
+                                                                <select class="custom-select custom-select-sm">
+                                                                        <option selected>Select</option>
+                                                                        <option value="1">one</option>
+                                                                        <option value="2">two</option>
+                                                                        <option value="3">three</option>
+                                                                        <option value="4">four</option>
+                                                                </select>
+                                                                
+                                                        </div>
+                                        </div>
+
+
+                                        
+                                </div>
+                        </div>
+
+                <div class="card-body">
+                
+                                <form id="MecVoucherForm">
+                                        
+                                        <div class="form-row no-gutters">
+
+                                        <div class="col-md-2">
+                                                        <div class="form-label-group">
+                                                                <input placeholder="Item code" list="SelectedItemcode" id="Me_Item_code">
+                                                                <label>Item code</label>
+                                                                <datalist id="SelectedItemcode">
+                                                                        <option value="one"></option>
+                                                                        <option value="two"></option>
+                                                                        <option value="three"></option>
+                                                                        <option value="four"></option>
+                                                                        <option value="five"></option>
+                                                                </datalist>
+                                                        </div>
+                                        </div>
+                        
+                                                
+                                                <div class="col-md-4">
+                                                        <div class="form-label-group">
+                                                                <div class="form-label-group">
+                                                                <input placeholder="Narration" id="Me_Narration">
+                                                                        <label>Narration</label>
+                                                                </div>               
+                                                        </div>
+                                                </div>    
+
+                                                <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                        <div class="form-label-group">
+                                                                                <input placeholder="Unit code"  id="Me_Unit_code">
+                                                                                <label>Unit code</label>
+                                                                        </div>               
+                                                                </div>
+                                                        </div>    
+
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                <div class="form-label-group">
+                                                                                        <input placeholder="Quantity"  id="Me_Quantity">
+                                                                                        <label>Quantity</label>
+                                                                                </div>               
+                                                                        </div>
+                                                        </div>    
+
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                <div class="form-label-group">
+                                                                                        <input placeholder="Challan rate"  id="Me_Chal_rate">
+                                                                                        <label>Challan rate</label>
+                                                                                </div>               
+                                                                        </div>
+                                                        </div>    
+                                                
+                                                
+                                
+                                                </div>
+                                        
+                                        <!-- end of first group -->
+
+                                        <!-- <div class="form-group"> -->
+                                        <div class="form-row no-gutters">
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                <div class="form-label-group">
+                                                                                        <input placeholder="Land value"  id="Me_Land_val" onkeyup="mul();" >
+                                                                                        <label>Land value</label>
+                                                                                </div>               
+                                                                        </div>
+                                                        </div>    
+                                        
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                <div class="form-label-group">
+                                                                                        <input class=" launch-modal" placeholder="Taxes"  id="Me_Taxes" onkeyup="mec_modal();">
+                                                                                        <label>Taxes</label>
+                                                                                </div>               
+                                                                        </div>
+                                                        </div>    
+                                                
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                        <input type="text" placeholder="Trans Amt" id="Me_Trans_amt">
+                                                                                        <label>Trans Amt</label>
+                                                                        </div>
+                                                                        
+                                                                </div>
+                                                        
+                                                
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                        <input type="text" placeholder="GST Amt" id="Me_GST_amt">
+                                                                                        <label>GST Amt</label>
+                                                                        </div>
+                                                                                
+                                                        </div>
+
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                        <input type="text" placeholder="I-GST Amt" id="Me_IGST_amt">
+                                                                                        <label>I-GST Amt</label>
+                                                                        </div>
+                                                                                
+                                                        </div>
+
+
+                                                        <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                        <div class="form-label-group">
+                                                                                <input  placeholder="GST Id"  id="Me_GST_id">
+                                                                                <label>GST Id</label>
+                                                                        </div>               
+                                                                </div>
+                                                        </div>    
+
+
+                        
+                                                </div>      
+                                        <!-- </div> -->
+                                
+                                        <!-- end of second group -->
+                                        <div class="form-row no-gutters">
+                                                        
+                                                        <div class="col-md-2">
+                                                                        <div class="form-label-group">
+                                                                                <div class="form-label-group">
+                                                                                        <input placeholder="GST state"  id="Me_GST_state">
+                                                                                        <label>GST state</label>
+                                                                                </div>               
+                                                                        </div>
+                                                        </div> 
+
+                                                        <div class="col-md-2">
+                                                                <div class="input-group input-group-sm mt-2">
+                                                                        <div class="input-group-prepend">
+                                                                                <span class="input-group-text" >Total</span>
+                                                                        </div>
+                                                                        <input id="Me_Total" class="form-control" readonly>
+                                                                </div>                   
+                                                        </div>
+                                                        
+                                                        <div class="col-md-2 offset-6">
+
+                                                                        <input type="button" value="Add Voucher" id="Me_AddVoucherBtn" class="btn btn-primary mt-1" />
+                                                         </div>   
+
+                                        </div>
+                                                        
+                                        <!-- end of third group -->
+                                        <!-- table that displays form elements -->
+
+                                <div id="Mec_table" style="display:none;" class="mt-2">
+                        
+                                                <table class="table table-sm table-bordered">
+                                                                <thead>
+                                                                        <tr>
+                                                                                <th>Srl</th>
+                                                                                <th>Item code</th>
+                                                                                <th>Narration</th>
+                                                                                <th>Unit code</th>
+                                                                                <th>Quantity</th>
+                                                                                <th>Challan rate</th>
+                                                                                <th>Land value</th>
+                                                                                <th>Taxes</th>       
+                                                                                <th>GST Amt</th>     
+                                                                                <th>I-GST Amt</th>     
+                                                                                <th>Total</th>
+                                                                        </tr>
+                                                                </thead>
+                                                        
+                                                        </table>
+                
+                                                        <!-- scrollable table rows -->
+                                                        <div class="scrollbar">
+                                                                <table class="table table-sm table-bordered table-hover1" id="Me_display_table">
+                                                                        <tbody>
+                                                                                        
+                                                                        </tbody>
+                                                                </table>
+                                                        </div>
+                                                                
+                        </div>
+
+                <!-- Modal for Tax details-->
+                <div class="modal fade" id="Me_Tax_modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title">Mechanical Tax Details</h5>
+                        
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                                
+                        <form>
+                                        <div class="form-row no-gutters">
+
+                                                <div class="col-md-4">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom"  type="text" id="Me_Bill_no">
+                                                                        <label>Bill no</label>                    
+                                                                        </div>
+                                                        </div>  
+                                                        
+                                                        
+                                                        <div class="col-md-4">
+                                                                <div class="form-label-group"> 
+                                                                        <input class="border-bottom" type="text" data-mask="date" id="Me_Bill_date" />
+                                                                        <label>Bill date</label>
+                                                                        </div>
+                                                                </div>
+
+                                                        <div class="col-md-4">
+                                                                        <div class="form-label-group">
+                                                                                <input class="border-bottom" type="text" id="Me_Challan_no">
+                                                                                <label>Challan no</label>             
+                                                                        </div>
+                                                        </div>  
+                                        </div>
+                                        <br>
+                                        <div class="form-row no-gutters">                                                                
+                                                        <div class="col-md-4">
+                                                                <div class="form-label-group"> 
+                                                                        <input class="border-bottom" type="text" data-mask="date" id="Me_Challan_date"/>
+                                                                        <label>Challan date</label>
+                                                                        </div>
+                                                                </div>
+
+                                                        <div class="col-md-4">
+                                                                        <div class="form-label-group">
+                                                                                        <input class="border-bottom" type="text" id="Me_Other_amt">
+                                                                                        <label>Other Amount</label>
+                                                                        </div>
+                                                                                
+                                                        </div>
+
+                                        
+                                        </div>      
+                                                
+                        </form>
+                                
+                                </div>
+
+                        <div class="modal-footer">
+                                        <input type="button" value="Save" id="Me_Tax_Modal_submit" class="btn btn-primary" />
+                        </div>
+
+                        </div>
+                        </div>
+                </div>
+
+                <!-- end of modal -->
+
+                                
+                        </form>
+                </div>
+                
+                </div>
+
+                <input class="btn btn-primary offset-5 mt-n4" type="submit" id="Me_SubmitBtn" value="Submit Voucher" disabled>
+        </div>
+
+
+</div>
+<!-- end of container -->
+
+
+<!-- <script src="https://spark.bootlab.io/js/app.js"></script> -->
+<script src="app3.js"></script>
+
+<!-- rule defined for input data mask -->
+<script src="app.js"></script>
+<script src="jquery.maskedinput.js"></script>
+
+<script>
+  $(document).ready(function(){
+    //-initialize the javascript
+    App.init();
+    App.masks();
+  });
+</script>
+
+<script src="voucher_cal.js"></script>
+
+        
+</body>
+</html>
