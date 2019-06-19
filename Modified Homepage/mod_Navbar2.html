@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mod navbar2</title>
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+     <!-- Favicon -->
+   <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" media="screen" href="theme4.css">
+    <link href="fontawesome-free-5.8.1-web/css/all.min.css" rel="stylesheet">
+
+
+<!-- custom css -->
+
+<style>
+
+.bg-dark {
+  
+    background-color:rgb(3, 11, 51) !important
+}
+
+
+.nav-pills .nav-link:hover {
+    border-color: #d0a73f;
+    background-color: #d0a73f;
+    color:black !important
+}
+
+
+body{
+
+
+  background-color: rgba(173, 214, 230, 0.411);
+  background-image: url("picture4.jpg");
+  
+  
+}
+
+.clock {
+   
+  font-size: 11px;
+    letter-spacing: 1px;
+    
+}
+.date {
+  font-size: 11px;
+    letter-spacing: 1px;
+}
+.navbar-brand {
+    display: block;
+    width: 127px;
+    color: #d0a73f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size:2rem;
+
+}
+
+
+
+</style>
+
+  </head>
+  
+  <body onload="countdown();">
+
+
+    
+    <!-- Navbar-->
+    <header class="navbar-wrapper navbar-sticky bg-dark text-white">
+    
+        <div class="d-table-cell align-middle pr-md-3"><a class="navbar-brand mr-1" href="mod_Navbar2.html">
+          <!-- <img src="assets/logo/sksl_logo.jpg" alt="SKSL" style="height:50px;width:45px;"/> -->
+          SKSL
+         </a></div>
+       
+        <div class="d-table-cell w-100 align-middle pl-md-3">
+
+            <div class="navbar-top d-none d-lg-flex justify-content-end align-items-center">
+                  <ul class="list-inline mb-0">
+                    <li>
+                            <span style="font-size: 11px">Time left</span>
+                            <input id="minutes" style="width:15px; 
+                              border: none; font-size: 11px; 
+                              font-weight: bold; color: black; text-align: center" readonly>
+                              <span>:</span>
+                            <input id="seconds" style="width:15px; 
+                                    border: none; font-size: 11px; 
+                                    font-weight: bold; color: black; text-align: center" readonly> 
+
+                    </li>
+                      <li>
+                        <!-- <i class="fas fa-clock"></i> -->
+                        <span id="MyClockDisplay" class="clock" onload="showTime()"></span>
+                      </li>
+
+                      <li>
+                        <!-- <i class="fas fa-calendar-week"></i> -->
+                        <span id="MyDateDisplay" class="date" onload="showDate()"></span>
+                        
+                      </li>
+                    <li class="dropdown-toggle mr-2"><a class="navbar-link" href="#"><i class="fas fa-user"></i>Test User</a>
+                      <div class="dropdown-menu right-aligned text-center" style="min-width: 100px;">
+                              <a class="dropdown-item" href="AfterLogOut.html">Log out</a>
+                      </div>
+                    </li>
+                   
+                  </ul>
+                </div>
+            
+
+          <div class="navbar justify-content-end justify-content-lg-between">
+           
+            <!-- Main Menu-->
+            <ul class="navbar-nav nav-pills d-none d-lg-block">
+              <!-- Home-->
+              <li class="nav-item"><a class="nav-link" href="mod_Navbar2.html" style="color: #fff;"><i class="fa fa-home"></i>&nbsp;Home</a>
+              </li>
+               <!-- Finance-->
+               <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fas fa-coins"></i>&nbsp; Finance</a>
+               
+                <div class="dropdown-menu mega-dropdown">
+                        <!-- <div class="d-flex"> -->
+                          <!-- <div class="column"> -->
+                            <div class="widget widget-custom-menu accordion-style-3">
+
+                                    <ul  class="dropdown-menu" id="accordion1">
+                                                 
+                                            <li class="dropdown-header font-weight-medium collapsed" href="#trans-submenu" data-toggle="collapse" aria-expanded="false">Accounts</li>
+                                            <div id="trans-submenu" class="collapse" data-parent="#accordion1">
+                                              <ul>
+                                                <li><a  href="../Modified Voucher_list/mod_Scroll_voucher.html">Voucher Entry</a></li>
+                                                <li><a href="../Modified Voucher_list/Bill_serial_insert.html">Party Bill </a></li>
+                                                <li><a href="../ERP-A-master/BG Trans/index.html">Bank  Gurantee</a></li>
+                                                <li><a href="#">RA Bill</a></li>
+                                                <li><a  href="../ERP-A-master/FD/index.html">Fixed Deposit</a></li>
+                                                <li><a href="#">Insurance Policy</a></li>
+                                                <li><a href="#">Finance Statement Report</a></li>
+                                                <li><a href="#">Finance MIS Report</a></li>
+                                              </ul>    
+                                          </div> 
+                  
+                                            <li class="dropdown-header font-weight-medium collapsed" href="#inv-submenu" data-toggle="collapse" aria-expanded="false">Inventory</li>
+                                            <div id="inv-submenu" class="collapse" data-parent="#accordion1">
+                                                <ul>
+                                                  <li><a  href="#">Voucher Entry</a></li>
+                                                  <li><a href="#">Party Bill </a></li>
+                                                  <li><a href="#">Bank  Gurantee</a></li>
+                                                  <li><a href="#">RA Bill</a></li>
+                                                  <li><a  href="#">Fixed Deposit</a></li>
+                                                  <li><a href="#">Insurance Policy</a></li>
+                                                  <li><a href="#">Finance Statement Report</a></li>
+                                                  <li><a href="#">Finance MIS Report</a></li>
+                                                </ul>    
+                                            </div> 
+                  
+                                            <li class="dropdown-header font-weight-medium collapsed" href="#mech-submenu" data-toggle="collapse" aria-expanded="false" >Mechanical</li>
+                                            <div id="mech-submenu" class="collapse" data-parent="#accordion1">
+                                                <ul>
+                                                  <li><a  href="#">Voucher Entry</a></li>
+                                                  <li><a href="#">Party Bill </a></li>
+                                                  <li><a href="#">Bank  Gurantee</a></li>
+                                                  <li><a href="#">RA Bill</a></li>
+                                                  <li><a  href="#">Fixed Deposit</a></li>
+                                                  <li><a href="#">Insurance Policy</a></li>
+                                                  <li><a href="#">Finance Statement Report</a></li>
+                                                  <li><a href="#">Finance MIS Report</a></li>
+                                                </ul>    
+                                            </div> 
+                  
+                                            <li class="dropdown-header font-weight-medium collapsed" href="#cb-submenu" data-toggle="collapse" aria-expanded="false">Client Billing</li>
+                                            <div id="cb-submenu" class="collapse" data-parent="#accordion1">
+                                                <ul>
+                                                  <li><a  href="#">Voucher Entry</a></li>
+                                                  <li><a href="#">Party Bill </a></li>
+                                                  <li><a href="#">Bank  Gurantee</a></li>
+                                                  <li><a href="#">RA Bill</a></li>
+                                                  <li><a  href="#">Fixed Deposit</a></li>
+                                                  <li><a href="#">Insurance Policy</a></li>
+                                                  <li><a href="#">Finance Statement Report</a></li>
+                                                  <li><a href="#">Finance MIS Report</a></li>
+                                                </ul>    
+                                            </div> 
+                                          
+                                          </ul>
+                
+                                </div>
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    </div>
+    
+              </li>
+             
+              <!-- Engineering-->
+              
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Engineering</a>
+
+                <div class="dropdown-menu mega-dropdown">
+                      <div class="widget widget-custom-menu accordion-style-3">
+
+                              <ul  class="dropdown-menu" id="accordion2">
+                                           
+                                      <li class="dropdown-header font-weight-medium  collapsed" href="#proj-submenu" data-toggle="collapse" aria-expanded="false">Project Costing</li>
+                                      <div id="proj-submenu" class="collapse" data-parent="#accordion2">
+                                        <ul>
+                                          <li><a  href="#">Tender Rate Annually</a></li>
+                                          <li><a href="#">Project Reports</a></li>
+                                          <li><a href="#">Drawings &amp; Activity</a></li>
+                                          <li><a href="#">Profile Settings</a></li>
+                                          
+                                        </ul>    
+                                    </div> 
+        
+                               </ul>
+          
+                       </div>
+                   
+               </div>
+
+              </li>
+
+
+              <!-- HR and admin-->
+
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;HR &amp; Admin</a>
+
+                    
+                <div class="dropdown-menu mega-dropdown">
+                    <div class="widget widget-custom-menu accordion-style-3">
+
+                            <ul  class="dropdown-menu" id="accordion3">
+                                         
+                                    <li class="dropdown-header font-weight-medium  collapsed" href="#payroll-submenu" data-toggle="collapse" aria-expanded="false">Payroll</li>
+                                    <div id="payroll-submenu" class="collapse" data-parent="#accordion3">
+                                      <ul>
+                                        <li><a  href="#">HR &amp; Payroll Master </a></li>
+                                        <li><a href="#">HR &amp; Payroll Transaction</a></li>
+                                        <li><a href="#">HR &amp; Payroll Reports</a></li>
+                                        <li><a href="#">Master Reports</a></li>
+                                        <li><a href="#">Utility</a></li>
+                                        
+                                      </ul>    
+                                       </div> 
+      
+                              </ul>
+        
+                     </div>
+               </div>
+
+              </li>
+              <!-- Labor-->
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fas fa-fist-raised"></i>&nbsp;Labor</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item"><a href="#">Labor Transaction Entry</a></li>
+                  <li class="dropdown-item"><a href="#">Labour Bills</a></li>
+                  <li class="dropdown-item"><a href="#">Reports</a></li>
+                  <li class="dropdown-item"><a href="#">Master List</a></li>
+                  <li class="dropdown-item"><a href="#">Utility</a></li>
+                 
+                </ul>
+              </li>
+              <!-- Master-->
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Master</a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item"><a href="#">Primary Master</a></li>
+                      <li class="dropdown-item"><a href="#">Account Master</a></li>
+                      <li class="dropdown-item"><a href="#">Inventory Master</a></li>
+                      <li class="dropdown-item"><a href="#">PO Master</a></li>
+                      <li class="dropdown-item"><a href="#">Labor Master</a></li>                      
+                  
+                </ul>
+              </li>
+              <!-- Utility-->
+
+              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;Utility</a>
+                <ul class="dropdown-menu">
+                  
+                      <li class="dropdown-item"><a href="#">Access Control</a></li>
+                      <li class="dropdown-item"><a href="#">User Control</a></li>
+                      
+                  
+                </ul>
+              </li>          
+    
+            </ul>
+            <div>
+            
+             
+            </div>
+          </div>
+        </div>
+    
+    </header>  
+  
+    <script src="vendor.js"></script>
+
+    <script>
+     //collapse accordion when it looses focus
+     $('.dropdown-menu').mouseleave(function(){
+        $('.collapse').collapse('hide');
+        });
+    </script>
+
+
+
+    <script src="homepage_cal.js"></script>
+
+
+  </body>
+</html>
