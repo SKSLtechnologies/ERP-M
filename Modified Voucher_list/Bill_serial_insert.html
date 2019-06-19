@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	
+  <title>Bill serial insert</title>
+
+  <link href="app2.css" rel="stylesheet">
+  <link href="floating-labels2.css" rel="stylesheet">
+
+
+  <!-- custom CSS -->
+<style>
+body{
+    background:#fff;
+}
+ .custom-control-input:checked~.custom-control-label:before {
+
+        color:#fff;
+    background-color: #05668D;
+    border-color:  #9BC4CB;
+  
+}
+
+.btn-primary
+ {
+         color:#fff;
+         background-color: #05668D;
+         border-color: #05668D;
+    
+} 
+.btn-primary:hover {
+  
+       
+         background-color: #064789;
+         border-color: #064789;
+ 
+}
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: 0 0 0 0 #05668D;
+}
+.select2-container--bootstrap4 .select2-results__option--highlighted[aria-selected] {
+    background-color:  #05668D;
+    color: #fff;
+}
+
+
+.font-weight-bolder {
+    font-weight: 1000;
+    
+}
+
+#Bill_table > table {
+        position: relative;
+    background-color:  #05668D;
+    color:#fff;
+
+}
+
+table{
+        table-layout: fixed;
+        border-collapse: collapse;
+}
+
+
+
+/* scroll effect on table */
+       
+.scrollbar{
+       
+position: relative;
+margin-top: -18px;
+height: 100px;
+overflow-y: auto;
+}
+.scrollbar table tbody tr td{
+        word-wrap: break-word;
+
+}
+.table-hover1 tr:hover {
+        color: black;
+        background-color:  #9BC4CB;
+        
+
+}
+
+
+
+
+/* disabled button */
+.btn-primary.disabled,
+.btn-primary:disabled{
+    color: #fff;
+    background-color: rgb(128, 125, 125);
+    border-color:  rgb(150, 146, 146);
+}
+
+
+
+
+
+
+</style>	
+</head>
+
+<body>
+
+  <div class="container">
+      
+         <!-- common header option for all three Vouchers -->
+
+         <form class="p-2 mb-2 text-dark" style="background-color:#62B6CB;">
+                        <div class="form-row">
+                                <div class="col-md-2">
+                                        <label class="form-label">Financial year</label>
+                                                <select class="form-control select2" id="Fin_year" data-toggle="select2">
+                                                        <option value="0809">0809</option>
+                                                        <option value="0910">0910</option>
+                                                        <option value="1011">1011</option>
+                                                        <option value="1112">1112</option>
+                                                        <option value="1213">1213</option>
+                                                        <option value="1314">1314</option>
+                                                        <option value="1415">1415</option>
+                                                        <option value="1516">1516</option>
+                                                        <option value="1617">1617</option>
+                                                        <option value="1718">1718</option>
+                                                        <option value="1819">1819</option>
+                                                        <option value="1920">1920</option>
+                                                </select>
+                
+                                </div>
+                                
+                                <div class="col-md-2 offset-md-4">
+                                                <label class="form-label">Location code</label>
+                                                <select class="form-control select2" id="Location_code" data-toggle="select2">
+                                                        <option value="0011">Kolkata</option>
+                                                        <option value="0012">Jharkhand</option>
+                                                        <option value="0014">Durgapur</option>
+                                                        <option value="0021">New Delhi</option>
+                                                        <option value="0093">Nagpur</option>
+                                                        <option value="0095">Bilaspur</option>
+                                                </select>
+                
+                                 </div>
+
+                                 <div class="col-md-2">
+                                                <label class="form-label">Project code</label>
+                                                    <select class="form-control select2" id="Project_code" data-toggle="select2"> 
+                                                            <option value="47">47</option>
+                                                            <option value="84">84</option>
+                                                            <option value="161">161</option>
+                                                            <option value="165">165</option>
+                                                            <option value="168">168</option>
+                                                            <option value="169">169</option>     
+                                                    </select>
+                    
+                                </div>
+
+                                <div class="col-md-2">        
+                                        <label class="form-lable">Receipt date</label>
+                                        <input class="form-control" type="text" id="Receipt_date" data-mask="date"/>
+                                </div>
+        
+                        </div>
+        </form>
+                
+        <!-- inline radio buttons -->
+
+         <form class="mb-2">
+
+                <div class="form-row">
+                      
+                      <div class="offset-3 col-md-2">
+                            <div class="custom-control custom-radio">
+                                    <input type="radio" id="BillSerial" name="customRadio" class="custom-control-input" onclick="DisplayForm();">
+                                    <label class="custom-control-label font-weight-bolder" for="BillSerial">Bill Serial</label>
+                            </div>                  
+                            
+                    </div>
+                                    
+                </div>
+        </form>
+           
+
+<div id="if_BillSerial" style="display:none">
+        
+        <div class="card">
+                <div class="card-header text-white" style="background-color: #05668D ;">
+                        <div class="row no-gutters">
+                                <div class="col-md-3">BILL SERIAL INSERT ENTRY</div>
+                        </div>
+                </div>
+
+            <div class="card-body">
+            
+                        <form id="BillSerialForm">
+                            
+                                <div class="form-row mt-2 ml-5">
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <input placeholder="Last serial no" type="text" id="Last_srl_no" >
+                                                        <label>Last serial no</label>                    
+                                                </div>
+                                        </div>
+
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <input  placeholder="Bill serial no" type="text" id="Bill_srl_no" onkeyup="sum();" readonly>
+                                                        <label>Bill serial no</label>                    
+                                                </div>
+                                        </div>           
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <input placeholder="Party code" list="SelectedPartycode" id="Party_code">
+                                                        <label>Party code</label>
+                                                        <datalist id="SelectedPartycode">
+                                                            <option value="one"></option>
+                                                            <option value="two"></option>
+                                                            <option value="three"></option>
+                                                            <option value="four"></option>
+                                                        </datalist>
+                                                </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <input placeholder="Account code" list="SelectedAccountcode" id="Account_code">
+                                                        <label>Account code</label>
+                                                        <datalist id="SelectedAccountcode">
+                                                            <option value="one"></option>
+                                                            <option value="two"></option>
+                                                            <option value="three"></option>
+                                                            <option value="four"></option>
+                                                        </datalist>
+                                                </div>
+                                        </div>
+                                         
+                                </div>
+                     
+                                <!-- end of first group -->
+                                
+                                <div class="form-row ml-5">
+
+                                        <!-- <div class="col-md-3">
+                                                <div class="form-label-group"> 
+                                                        <input type="text" data-mask="date" id="Receipt_date" placeholder="DD/MM/YYYY"/>
+                                                        <label>Receipt date</label>
+                                                </div>
+                                        </div>    -->
+
+
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <input placeholder="Bill no" type="text" id="Bill_no">
+                                                        <label>Bill no</label>                    
+                                                </div>
+                                        </div>  
+                                        
+                                        
+                                        <div class="col-md-3">
+                                                <div class="form-label-group"> 
+                                                        <input type="text" data-mask="date" id="Bill_date" placeholder="DD/MM/YYYY"/>
+                                                        <label>Bill date</label>
+                                                </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                                <input type="text"  placeholder="Bill amount" id="Bill_amount">
+                                                                <label>Bill amount</label>
+                                                </div>
+                                                    
+                                        </div>    
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <div class="form-label-group">
+                                                            <input placeholder="Narration" id="Narration">
+                                                                <label>Narration</label>
+                                                        </div>               
+                                                </div>
+                                            </div>   
+                                        
+                                 </div>      
+                            
+                                <!-- end of second group -->
+                                
+                        <div class="form-row ml-5">    
+                                
+
+                                <div class="col-md-3">
+                                        <div class="form-label-group">
+                                                <input placeholder="Purchase order no" type="text" id="Purchase_order">
+                                                <label>Purchase order no</label>                    
+                                        </div>
+                                </div>      
+                                
+                                
+                                <div class="col-md-3">
+                                        <div class="form-label-group"> 
+                                                <input type="text" data-mask="date" id="Purchase_date"
+                                                placeholder="DD/MM/YYYY" />
+                                                <label>Purchase order date</label>
+                                        </div>
+                                </div>
+                                 
+                                <div class="col-md-3">
+                                        <div class="form-label-group">
+                                                        <input type="text" placeholder="Purchase Order amount" id="Purchase_amount">
+                                                        <label>Purchase order amount</label>
+                                        </div>
+                                            
+                                </div>
+
+                                <div class="col-md-3">
+
+                                        <input type="button" value="Add Voucher" id="AddVoucherBtn" class="btn btn-primary mt-2" />
+                                </div>      
+
+                                    
+        
+                        </div>
+                    <!-- end of third group -->  
+
+        
+                        <!-- table that displays form elements -->
+                    
+                <div id="Bill_table" style="display:none" class="mt-2">
+                
+                                
+                    
+                                                <table class="table table-sm table-bordered" >
+                                                    <thead>
+                                                                <tr>
+                                                                        <th>Serial no</th>
+                                                                        <th>Account code</th>
+                                                                        <th>Bill no</th>
+                                                                        <th>Bill date</th>
+                                                                        <th>Narration</th>
+                                                                        <th>Bill amount</th>
+                                                                        <th>Bill serial no</th>
+                                                                        <th>Receipt date</th>
+                                                                                    
+                                                                </tr>
+                                                        </thead>
+                    
+                                                </table>
+
+                                                 <!-- scrollable table rows -->
+                                                <div class="scrollbar">
+                                                                <table class="table table-sm table-bordered table-hover1" id="Bill_display_table">
+                                                                <tbody>
+                                                                                
+                                                                </tbody>
+                                                                </table>
+                                                </div>
+                                  
+
+                                                             
+                </div>
+                </form>
+            </div>
+        </div>
+
+        <input class="btn btn-primary offset-5 mt-n4" type="submit" id="Bill_SubmitBtn" value="Submit Voucher" disabled>
+
+</div>
+    
+</div>
+<!-- end of container -->
+
+
+<script src="app3.js"></script>
+
+<!--clearing forms-->
+
+<script src="jquery.clearform.js"></script>
+
+
+<script src="billserial_cal.js"></script>
+
+
+
+
+        
+</body>
+</html>
