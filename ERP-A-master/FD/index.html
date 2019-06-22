@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <title>FD ERP</title>
+
+         <!-- CSS for form -->
+
+         <link href="style/unmod_css.css" rel="stylesheet">
+         <link href="style/floating-labels.css" rel="stylesheet">
+         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ 
+ 
+         <!-- CSS for navbar -->
+ 
+         <link rel="stylesheet" media="screen" href="../../Modified Homepage/theme4.css">
+ 
+         <link href="../../Modified Homepage/fontawesome-free-5.8.1-web/css/all.min.css" rel="stylesheet">
+         
+
+
+      
+           <!-- custom CSS -->
+        <style>
+                body{
+                background:rgba(173, 214, 230, 0.411);
+                
+                }
+                .container{
+                padding-top: 15px;
+                }
+
+                /* custom CSS for navbar */
+
+
+                .bg-dark {
+                
+                background-color:rgb(3, 11, 51) !important
+                }
+
+
+                .nav-pills .nav-link:hover {
+                border-color: #d0a73f;
+                background-color: #d0a73f;
+                color:black !important
+                }
+
+                .clock {
+                
+                font-size: 11px;
+                letter-spacing: 1px;
+                
+                }
+                .date {
+                font-size: 11px;
+                letter-spacing: 1px;
+                }
+                .navbar-brand {
+                display: block;
+                width: 127px;
+                color: #d0a73f;
+                text-decoration: none;
+                font-weight: 600;
+                font-size:1rem;
+                text-transform: uppercase;
+                
+                }
+
+                /* custom CSS for form */
+
+                .custom-control-input:checked~.custom-control-label:before {
+
+                        color: #fff;
+                        background-color: #05668D;
+                        border-color: #9BC4CB;
+
+                }
+
+                .btn-primary {
+                        color: #fff;
+                        background-color: #05668D;
+                        border-color: #05668D;
+
+                }
+
+                .btn-primary:hover {
+
+
+                        background-color: #064789;
+                        border-color: #064789;
+
+                }
+
+                .btn-primary:focus,
+                .btn-primary.focus {
+                        box-shadow: 0 0 0 0 #05668D;
+                }
+
+                .select2-container--bootstrap4 .select2-results__option--highlighted[aria-selected] {
+                        background-color: #05668D;
+                        color: #fff;
+                }
+
+                .card.material-table {
+                        width: 1117px;
+                }
+
+                .table-bordered tr,
+                .table-bordered thead {
+                        border: 1px solid #dee2e6;
+                }
+
+                .table thead th {
+                        width: auto;
+                        background-color: #05668D;
+                        color: #fff;
+                        white-space: nowrap;
+
+                }
+
+                .table td {
+                        white-space: normal;
+
+                }
+
+                .font-weight-bolder {
+                        font-weight: 900;
+                }
+        </style>
+</head>
+
+<body onload="countdown();">
+
+             <!-- Navbar-->
+             <header class="navbar-wrapper navbar-sticky bg-dark text-white">
+    
+                        <div class="mt-2"><a class="navbar-brand mr-1" href="../Modified Homepage/mod_Navbar2.html">
+                          <!-- <img src="assets/logo/sksl_logo.jpg" alt="SKSL" style="height:50px;width:45px;"/> -->
+                          S.K.Samanta &amp; Co.(P) Ltd
+                         </a></div>
+                       
+                        <div class="d-table-cell w-100 align-middle pl-md-3">
+                
+                            <div class="navbar-top d-none d-lg-flex justify-content-end align-items-center">
+                                  <ul class="list-inline mb-0">
+                                    <li>
+                                            <span style="font-size: 11px">Time left</span>
+                                            <input id="minutes" style="width:15px; 
+                                              border: none; font-size: 11px; 
+                                              font-weight: bold; color: black; text-align: center" readonly>
+                                              <span>:</span>
+                                            <input id="seconds" style="width:15px; 
+                                                    border: none; font-size: 11px; 
+                                                    font-weight: bold; color: black; text-align: center" readonly> 
+                
+                                    </li>
+                                      <li>
+                                        
+                                        <span id="MyClockDisplay" class="clock" onload="showTime()"></span>
+                                      </li>
+                
+                                      <li>
+                                       
+                                        <span id="MyDateDisplay" class="date" onload="showDate()"></span>
+                                        
+                                      </li>
+                                    <li class="dropdown-toggle mr-2"><a class="navbar-link" href="#"><i class="fas fa-user"></i>Test User</a>
+                                      <div class="dropdown-menu right-aligned text-center" style="min-width: 100px;">
+                                              <a class="dropdown-item" href="../Modified Homepage/AfterLogOut.html">Log out</a>
+                                      </div>
+                                    </li>
+                                   
+                                  </ul>
+                                </div>
+                            
+                
+                          <div class="navbar justify-content-end justify-content-lg-between">
+                           
+                            <!-- Main Menu-->
+                            <ul class="navbar-nav nav-pills d-none d-lg-block">
+                              <!-- Home-->
+                              <li class="nav-item"><a class="nav-link" href="../Modified Homepage/mod_Navbar2.html" style="color: #fff;"><i class="fa fa-home"></i>&nbsp;Home</a>
+                              </li>
+                               <!-- Finance-->
+                               <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fas fa-coins"></i>&nbsp; Finance</a>
+                               
+                                <div class="dropdown-menu mega-dropdown">
+                                       
+                                            <div class="widget widget-custom-menu accordion-style-3">
+                
+                                                    <ul  class="dropdown-menu" id="accordion1">
+                                                                 
+                                                            <li class="dropdown-header font-weight-medium collapsed" href="#trans-submenu" data-toggle="collapse" aria-expanded="false">Accounts</li>
+                                                            <div id="trans-submenu" class="collapse" data-parent="#accordion1">
+                                                              <ul>
+                                                                <li><a  href="../Modified Voucher_list/Voucher.html">Voucher Entry</a></li>
+                                                                <li><a href="../Modified Voucher_list/mod_Bill_serial_insert.html">Bill Serial </a></li>
+                                                                <li><a href="#">Party Bill </a></li>
+                                                                <li><a href="#">Bank  Gurantee</a></li>
+                                                                <li><a href="../Modified Voucher_list/mod_Monthly_accounts_estimate.html">Monthly Estimate</a></li>
+                                                                <li><a href="#">RA Bill</a></li>
+                                                                <li><a  href="#">Fixed Deposit</a></li>
+                                                                <li><a href="#">Insurance Policy</a></li>
+                                                              </ul>    
+                                                          </div> 
+                                  
+                                                            <li class="dropdown-header font-weight-medium collapsed" href="#inv-submenu" data-toggle="collapse" aria-expanded="false">Inventory</li>
+                                                            <div id="inv-submenu" class="collapse" data-parent="#accordion1">
+                                                                <ul>
+                                                                  <li><a  href="#">Voucher Entry</a></li>
+                                                                  <li><a href="#">Party Bill </a></li>
+                                                                  <li><a href="#">Bank  Gurantee</a></li>
+                                                                  <li><a href="#">RA Bill</a></li>
+                                                                  <li><a  href="#">Fixed Deposit</a></li>
+                                                                  <li><a href="#">Insurance Policy</a></li>
+                                                                </ul>    
+                                                            </div> 
+                                  
+                                                            <li class="dropdown-header font-weight-medium collapsed" href="#mech-submenu" data-toggle="collapse" aria-expanded="false" >Mechanical</li>
+                                                            <div id="mech-submenu" class="collapse" data-parent="#accordion1">
+                                                                <ul>
+                                                                  <li><a  href="#">Voucher Entry</a></li>
+                                                                  <li><a href="#">Party Bill </a></li>
+                                                                  <li><a href="#">Bank  Gurantee</a></li>
+                                                                  <li><a href="#">RA Bill</a></li>
+                                                                  <li><a  href="#">Fixed Deposit</a></li>
+                                                                  <li><a href="#">Insurance Policy</a></li>
+                                                                </ul>    
+                                                            </div> 
+                                  
+                                                            <li class="dropdown-header font-weight-medium collapsed" href="#cb-submenu" data-toggle="collapse" aria-expanded="false">Client Billing</li>
+                                                            <div id="cb-submenu" class="collapse" data-parent="#accordion1">
+                                                                <ul>
+                                                                  <li><a  href="#">Voucher Entry</a></li>
+                                                                  <li><a href="#">Party Bill </a></li>
+                                                                  <li><a href="#">Bank  Gurantee</a></li>
+                                                                  <li><a href="#">RA Bill</a></li>
+                                                                  <li><a  href="#">Fixed Deposit</a></li>
+                                                                  <li><a href="#">Insurance Policy</a></li>
+                                                                </ul>    
+                                                            </div> 
+                                                          
+                                                          </ul>
+                                
+                                                </div>
+                                           
+                                    </div>
+                    
+                              </li>
+                             
+                              <!-- Engineering-->
+                              
+                              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Engineering</a>
+                
+                                <div class="dropdown-menu mega-dropdown">
+                                      <div class="widget widget-custom-menu accordion-style-3">
+                
+                                              <ul  class="dropdown-menu" id="accordion2">
+                                                           
+                                                      <li class="dropdown-header font-weight-medium  collapsed" href="#proj-submenu" data-toggle="collapse" aria-expanded="false">Project Costing</li>
+                                                      <div id="proj-submenu" class="collapse" data-parent="#accordion2">
+                                                        <ul>
+                                                          <li><a  href="#">Tender Rate Annually</a></li>
+                                                          <li><a href="#">Project Reports</a></li>
+                                                          <li><a href="#">Drawings &amp; Activity</a></li>
+                                                          <li><a href="#">Profile Settings</a></li>
+                                                          
+                                                        </ul>    
+                                                    </div> 
+                        
+                                               </ul>
+                          
+                                       </div>
+                                   
+                               </div>
+                
+                              </li>
+                
+                
+                              <!-- HR and admin-->
+                
+                              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;HR &amp; Admin</a>
+                
+                                    
+                                <div class="dropdown-menu mega-dropdown">
+                                    <div class="widget widget-custom-menu accordion-style-3">
+                
+                                            <ul  class="dropdown-menu" id="accordion3">
+                                                         
+                                                    <li class="dropdown-header font-weight-medium  collapsed" href="#payroll-submenu" data-toggle="collapse" aria-expanded="false">Payroll</li>
+                                                    <div id="payroll-submenu" class="collapse" data-parent="#accordion3">
+                                                      <ul>
+                                                        <li><a  href="#">HR &amp; Payroll Master </a></li>
+                                                        <li><a href="#">HR &amp; Payroll Transaction</a></li>
+                                                        <li><a href="#">HR &amp; Payroll Reports</a></li>
+                                                        <li><a href="#">Master Reports</a></li>
+                                                        <li><a href="#">Utility</a></li>
+                                                        
+                                                      </ul>    
+                                                       </div> 
+                      
+                                              </ul>
+                        
+                                     </div>
+                               </div>
+                
+                              </li>
+                              <!-- Labor-->
+                              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fas fa-fist-raised"></i>&nbsp;Labor</a>
+                                <ul class="dropdown-menu">
+                                  <li class="dropdown-item"><a href="#">Labor Transaction Entry</a></li>
+                                  <li class="dropdown-item"><a href="#">Labour Bills</a></li>
+                                  <li class="dropdown-item"><a href="#">Reports</a></li>
+                                  <li class="dropdown-item"><a href="#">Master List</a></li>
+                                  <li class="dropdown-item"><a href="#">Utility</a></li>
+                                 
+                                </ul>
+                              </li>
+                              <!-- Master-->
+                              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Master</a>
+                                <ul class="dropdown-menu">
+                                  <li class="dropdown-item"><a href="#">Primary Master</a></li>
+                                      <li class="dropdown-item"><a href="#">Account Master</a></li>
+                                      <li class="dropdown-item"><a href="#">Inventory Master</a></li>
+                                      <li class="dropdown-item"><a href="#">PO Master</a></li>
+                                      <li class="dropdown-item"><a href="#">Labor Master</a></li>                      
+                                  
+                                </ul>
+                              </li>
+                              <!-- Utility-->
+                
+                              <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;Utility</a>
+                                <ul class="dropdown-menu">
+                                  
+                                      <li class="dropdown-item"><a href="#">Access Control</a></li>
+                                      <li class="dropdown-item"><a href="#">User Control</a></li>
+                                      
+                                  
+                                </ul>
+                              </li>          
+                    
+                            </ul>
+                            <div>
+                            
+                             
+                            </div>
+                          </div>
+                        </div>
+                    
+                </header> 
+        
+
+        <div class="container">
+
+                <!-- common header option for all three Vouchers -->
+
+                <form class="p-2 mb-2 text-dark" style="background-color:#62B6CB;">
+                        <div class="form-row">
+                                <div class="col-md-2">
+                                        <label class="form-label">Project code</label>
+                                        <select class="form-control select2" data-toggle="select2" id="projcd">
+                                                <option value="084">084</option>
+                                                <option value="011">011</option>
+                                                <option value="161">161</option>
+                                                <option value="165">165</option>
+                                                <option value="168">168</option>
+                                                <option value="169">169</option>
+                                        </select>
+                                </div>
+
+
+                                <div class="col-md-2 offset-md-6">
+                                        <label class="form-label">FD Number</label>
+                                        <input type="text" class="form-control" id="fdr_no">
+                                </div>
+                                <div class="col-md-2">
+                                        <label class="form-lable">FD date</label>
+                                        <input class="form-control" type="text" id="fd_date" data-mask="date"
+                                                name="date" placeholder="MM/DD/YYYY" />
+                                </div>
+                        </div>
+                </form>
+
+                <!-- inline radio buttons -->
+
+                <form class="mb-2">
+
+                        <div class="form-row ml-2">
+
+                                <div class="offset-3 col-md-2">
+                                        <div class="custom-control custom-radio">
+                                                <input type="radio" id="FDentry" name="customRadio"
+                                                        class="custom-control-input"
+                                                        onclick="javascript:Display_FDentry();">
+                                                <label class="custom-control-label font-weight-bolder" for="FDentry">FD
+                                                        Insert</label>
+                                        </div>
+
+                                </div>
+
+
+                                <div class="col-md-2">
+                                        <div class="custom-control custom-radio">
+                                                <input type="radio" id="FDupdate" name="customRadio"
+                                                        class="custom-control-input"
+                                                        onclick="javascript:Display_FDupdate();">
+                                                <label class="custom-control-label font-weight-bolder" for="FDupdate">FD
+                                                        Update</label>
+                                        </div>
+                                </div>
+
+
+                                <div class="col-md-2">
+                                        <div class="custom-control custom-radio">
+                                                <input type="radio" id="FDsearch" name="customRadio"
+                                                        class="custom-control-input"
+                                                        onclick="javascript:Display_FDsearch();">
+                                                <label class="custom-control-label font-weight-bolder" for="FDsearch">FD
+                                                        Search</label>
+                                        </div>
+                                </div>
+
+                        </div>
+                </form>
+
+
+                <!-- display  FD insert  -->
+
+                <div id="if_FDinsert" style="display:none">
+                        <div class="card">
+                                <div class="card-header text-white" style="background-color: #05668D ;">
+                                        <div class="row no-gutters">
+                                                <div class="col-md-4">FIXED DEPOSIT DETAILS ENTRY</div>
+                                        </div>
+                                </div>
+
+                                <div class="card-body">
+                                        <form id="FDform">
+
+                                                <div class="form-row no-gutters">
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input type="text"
+                                                                                placeholder="FD Serial No."
+                                                                                list="SelectedMachinecode"
+                                                                                id="fd_entry_srl">
+                                                                        <label for="fd_entry_srl">FD serial no.</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input type="text"
+                                                                                placeholder="Account code"
+                                                                                list="AccCdList" id="acccode">
+                                                                        <label for="acccode">Account code</label>
+                                                                        <datalist id="AccCdList">
+                                                                                <option value="Advance"></option>
+                                                                                <option value="Performance"></option>
+                                                                                <option value="V. Corporate BG">
+                                                                                </option>
+                                                                                <option value="Other"></option>
+                                                                        </datalist>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input type="text"
+                                                                                placeholder="Bank name" list="BankList"
+                                                                                id="bnk_name">
+                                                                        <label for="bnk_name">Bank name</label>
+                                                                        <datalist id="BankList">
+                                                                                <option value="SBI"></option>
+                                                                                <option value="UBI"></option>
+                                                                        </datalist>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                placeholder="Principal amount"
+                                                                                id="fd_amt">
+                                                                        <label for="fd_amt">Principal amount</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                placeholder="Interest Rate"
+                                                                                id="int_rate">
+                                                                        <label for="int_rate">Interest Rate</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input type="text"
+                                                                                placeholder="File No." id="file_no">
+                                                                        <label for="file_no">File No.</label>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                                <!-- end of first group -->
+
+                                                <div class="form-row no-gutters">
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                data-mask="date" id="mat_amt"
+                                                                                name="date"
+                                                                                placeholder="Maturity amount">
+                                                                        <label for="mat_amt">Maturity amount</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input type="text"
+                                                                                data-mask="date" id="mat_dt" name="date"
+                                                                                placeholder="MM/DD/YYYY">
+                                                                        <label for="mat_dt">Maturity date</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                data-mask="date" id="secu_stat"
+                                                                                name="date" placeholder="Yes/No">
+                                                                        <label for="secu_stat">Security status</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input type="text"
+                                                                                placeholder="Security Amount"
+                                                                                id="secu_amt">
+                                                                        <label for="secu_amt">Security Amount</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                placeholder="FD with" id="secu_to">
+                                                                        <label for="secu_to">FD with</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                placeholder="Security for"
+                                                                                id="secu_for">
+                                                                        <label for="secu_for">Security for</label>
+                                                                </div>
+                                                        </div>
+
+                                                </div>
+
+                                                <!-- end of second group -->
+
+                                                <div class="form-row no-gutters">
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                data-mask="date" id="pledge_dt"
+                                                                                name="date" placeholder="MM/DD/YYYY">
+                                                                        <label for="pledge_dt">Pledge date</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                data-mask="date" id="pledge_upto"
+                                                                                name="date" placeholder="MM/DD/YYYY">
+                                                                        <label for="pledge_upto">Pledge upto</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input type="text"
+                                                                                placeholder="FD status"
+                                                                                list="FDstatusList" id="fd_status">
+                                                                        <label for="fd_status">FD status</label>
+                                                                        <datalist id="FDstatusList">
+                                                                                <option value="In tenure"></option>
+                                                                                <option value="Encashed"></option>
+                                                                                <option value="Auto-renewed"></option>
+                                                                                <option value="Manually-renewed">
+                                                                                </option>
+                                                                                <option value="Encashed"></option>
+                                                                                <option value="Claimed"></option>
+                                                                        </datalist>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                data-mask="date" id="stat_dt"
+                                                                                name="date" placeholder="MM/DD/YYYY" />
+                                                                        <label for="stat_dt">Updated on</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                data-mask="date" id="valid_to"
+                                                                                name="date" placeholder="MM/DD/YYYY" />
+                                                                        <label for="valid_to">Status valid upto</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                placeholder="Encashed/Renewed Amount"
+                                                                                id="stat_amt">
+                                                                        <label for="stat_amt">Amount</label>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                                <!-- end of second group -->
+
+
+                                                <div class="form-row no-gutters">
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input  type="text"
+                                                                                placeholder="Remarks" id="remarks">
+                                                                        <label for="remarks">Remarks</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md-2">
+                                                                        <input type="button" value="Submit" id="FDinsertBtn"
+                                                                                class="btn btn-primary mt-1 ml-2" />
+                                                        </div>
+                                                </div>
+                                                <!-- end of third group -->
+
+
+
+                                        </form>
+                                </div>
+                        </div>
+
+                </div>
+
+
+
+                <!-- display FD Update -->
+
+                <div id="if_FDupdate" style="display:none">
+                        <div class="card">
+                                <div class="card-header text-white" style="background-color: #05668D ;">
+                                        <div class="row no-gutters">
+                                                <div class="col-md-4">FIXED DEPOSIT DETAIL UPDATE</div>
+                                        </div>
+                                </div>
+
+                                <div class="card-body">
+                                        <form id="FDupdateForm">
+                                                <div class="form-row no-gutters">
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input type="text" class="border-bottom"
+                                                                                placeholder="FD Serial No."
+                                                                                list="SelectedMachinecode"
+                                                                                id="fd_entry_srl">
+                                                                        <label for="fd_entry_srl">FD serial no.</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input type="text" class="border-bottom"
+                                                                                placeholder="Bank name" list="BankList"
+                                                                                id="bnk_name">
+                                                                        <label for="bnk_name">Bank name</label>
+                                                                        <datalist id="BankList">
+                                                                                <option value="SBI"></option>
+                                                                                <option value="UBI"></option>
+                                                                                <option value="Purchase Order"></option>
+                                                                                <option value="Work Order"></option>
+                                                                        </datalist>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                placeholder="Principal amount"
+                                                                                id="fd_amt">
+                                                                        <label for="fd_amt">Principal amount</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                placeholder="Interest Amount"
+                                                                                id="int_amt">
+                                                                        <label for="int_amt">Interest Amount</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                placeholder="TDS amount" id="tds_amt">
+                                                                        <label for="tds_amt">TDS amount</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                placeholder="Maturity amount"
+                                                                                id="mat_amt">
+                                                                        <label for="mat_amt">Maturity amount</label>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                                <!-- end of first group -->
+                                                <div class="form-row no-gutters">
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                placeholder="Security Amount"
+                                                                                id="secu_amt">
+                                                                        <label for="secu_amt">Security Amount</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                placeholder="FD with" id="secu_to">
+                                                                        <label for="secu_to">FD with</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                placeholder="Security for"
+                                                                                id="secu_for">
+                                                                        <label for="secu_for">Security for</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input type="text" class="border-bottom"
+                                                                                placeholder="FD status"
+                                                                                list="FDstatusList" id="fd_status">
+                                                                        <label for="fd_status">FD status</label>
+                                                                        <datalist id="FDstatusList">
+                                                                                <option value="In tenure"></option>
+                                                                                <option value="Encashed"></option>
+                                                                                <option value="Auto-renewed"></option>
+                                                                                <option value="Manually-renewed">
+                                                                                </option>
+                                                                                <option value="Encashed"></option>
+                                                                                <option value="Claimed"></option>
+                                                                        </datalist>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                data-mask="date" id="stat_dt"
+                                                                                name="date" placeholder="MM/DD/YYYY" />
+                                                                        <label for="stat_dt">Updated on</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                data-mask="date" id="valid_to"
+                                                                                name="date" placeholder="MM/DD/YYYY" />
+                                                                        <label for="valid_to">Status valid upto</label>
+                                                                </div>
+                                                        </div>
+
+
+                                                </div>
+
+                                                <!-- end of second group -->
+                                                <div class="form-row no-gutters">
+
+                                                        <div class="col-md-2">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                placeholder="Encashed/Renewed Amount"
+                                                                                id="stat_amt">
+                                                                        <label for="stat_amt">Amount</label>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-md">
+                                                                <div class="form-label-group">
+                                                                        <input class="border-bottom" type="text"
+                                                                                placeholder="Remarks" id="remarks">
+                                                                        <label for="remarks">Remarks</label>
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                                <input type="button" value="Update"
+                                                                        class="btn btn-primary mt-1 ml-2" />
+                                                        </div>
+                                                </div>
+                                        </form>
+
+                                </div>
+                        </div>
+                </div>
+
+                <!-- display FD search -->
+
+                <div id="if_FDsearch" style="display:none;">
+                        <div class="card">
+                                <div class="card-header text-white" style="background-color: #05668D ;">
+                                        <div class="row no-gutters">
+                                                <!-- <div class="col-md-4">SRL No.<span id="Me_srl_no">1</span> &nbsp; -->
+                                                FIXED DEPOSIT SEARCH</div>
+                                        <div class="offset-3 col-md-2">
+                                        </div>
+                                </div>
+                
+                        <div class="card-body">
+
+                                <form id="FDsearchForm">
+
+                                        <div class="form-row no-gutters">
+
+                                                <div class="col-md">
+                                                        <div class="form-label-group">
+                                                                <input type="text" class="border-bottom"
+                                                                        placeholder="Project Code" list="ProjectList"
+                                                                        id="projcd" >
+                                                                <label for="projcd">Project Code</label>
+                                                                <datalist id="ProjectList">
+                                                                        <option value="84"></option>
+                                                                        <option value="11"></option>
+                                                                </datalist>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md">
+                                                        <div class="form-label-group">
+                                                                <input type="text" class="border-bottom"
+                                                                        placeholder="FD Number" id="fd_no"  onkeyup="myFunction()" />
+                                                                <label for="fd_no">FD Number</label>
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-md">
+                                                        <div class="form-label-group">
+                                                                <input type="text" class="border-bottom"
+                                                                        placeholder="FD status" list="FDstatusList"
+                                                                        id="fd_stat" />
+                                                                <label for="fd_stat">FD status</label>
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-md">
+                                                        <div class="form-label-group">
+                                                                <input class="border-bottom" type="text"
+                                                                        placeholder="FD with" id="sec_to"
+                                                                        onkeyup="myFunction()">
+                                                                <label for="sec_to">FD with</label>
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-md">
+                                                        <div class="form-label-group">
+                                                                <input type="text" class="border-bottom"
+                                                                        placeholder="Bank name" list="BankList"
+                                                                        id="bnk_nm" onkeyup="myFunction()" />
+                                                                <label for="bnk_nm">Bank name</label>
+                                                                <datalist id="BankList">
+                                                                        <option value="SBI"></option>
+                                                                        <option value="UBI"></option>
+                                                                </datalist>
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-md">
+                                                        <div class="form-label-group">
+                                                                <input class="border-bottom" type="text"
+                                                                        data-mask="date" id="mat_dt"
+                                                                        placeholder="MM/DD/YYYY" name="date"
+                                                                        />
+                                                                <label for="mat_dt">Maturity Date</label>
+                                                        </div>
+                                                </div>
+
+
+                                        </div>
+
+                                
+                                 </form>
+                        <!-- table that displays form elements -->
+                                <div class="card material-table ml-n2 mt-2">
+                                        <table class="table" id="fd_table">
+                                                <thead>
+                                                        <tr>
+                                                                <th>#</th>
+                                                                <th>FD No.</th>
+                                                                <th>FD Amount</th>
+                                                                <th>Maturity Date</th>
+                                                                <th>Maturity Amount</th>
+                                                                <th>FD with</th>
+                                                                <th>Bank</th>
+                                                                <th>Encashed Date</th>
+                                                                <th>Interest %</th>
+                                                        </tr>
+                                                </thead>
+                                        </table>
+                                </div>
+
+                        </div>
+
+
+                        </div>
+                 </div>
+
+        </div>
+        <!-- end of container -->
+
+  <!---------------js for navbar ------------------->
+
+  <script src="../../Modified Homepage/vendor.js"></script>
+  <script src="../../Modified Homepage/homepage_cal.js"></script>
+
+  <script>
+          //collapse accordion when it looses focus
+          $('.dropdown-menu').mouseleave(function(){
+          $('.collapse').collapse('hide');
+          });
+  </script>
+  
+
+<!----------------- js for form --------------------->
+
+        <script src="https://spark.bootlab.io/js/app.js"></script>
+
+        <!-- rule defined for input data mask -->
+        <script src="js/app.js"></script>
+        <script src="jquery.maskedinput.js"></script>
+        <script src="jquery.clearform.js"></script>
+
+        <script>
+                $(document).ready(function () {
+                        //-initialize the javascript
+                        App.init();
+                        App.masks();
+                });
+        </script>
+
+        <script>
+                $(function () {
+                        // Select2
+                        $(".select2").each(function () {
+                                $(this)
+                                        .wrap("<div class=\"position-relative\"></div>")
+                                        .select2({
+                                                dropdownParent: $(this).parent()
+                                        });
+                        })
+
+                        //calendar
+                        $("input[name=\"date\"]").daterangepicker({
+                                singleDatePicker: true,
+                                showDropdowns: true
+                        });
+                });
+        </script>
+
+
+
+        <script>
+                // for displaying BG insert
+                function Display_FDentry() {
+                        if (document.getElementById('FDentry').checked) {
+
+                                document.getElementById('if_FDupdate').style.display = 'none';
+                                document.getElementById('if_FDsearch').style.display = 'none';
+
+
+                                document.getElementById('if_FDinsert').style.display = 'block';
+                        }
+                }
+
+
+                //for displaying material
+                function Display_FDupdate() {
+                        if (document.getElementById('FDupdate').checked) {
+
+                                document.getElementById('if_FDinsert').style.display = 'none';
+                                document.getElementById('if_FDsearch').style.display = 'none';
+
+
+                                document.getElementById('if_FDupdate').style.display = 'block';
+                        }
+                }
+
+
+                //for displaying bg grid
+
+
+                function Display_FDsearch() {
+                        if (document.getElementById('FDsearch').checked) {
+
+                                document.getElementById('if_FDinsert').style.display = 'none';
+                                document.getElementById('if_FDupdate').style.display = 'none';
+
+                                document.getElementById('if_FDsearch').style.display = 'block';
+                                // document.getElementById("FDsearchForm").reset();
+                                // document.getElementById("bg_table").reset();
+
+                        }
+                }
+        </script>
+
+
+        <script>
+                $(document).ready(function () {
+                        $.getJSON("/csvjson.json", function (data) {
+                                var fd_data = '';
+                                $.each(data, function (key, value) {
+                                        fd_data += '<tr>';
+                                        fd_data += '<td>' + key +
+                                                '</td>';
+                                        fd_data += '<td>' + value
+                                                .fdr_no + '</td>';
+                                        fd_data += '<td>' + value
+                                                .fd_amount + '</td>';
+                                        fd_data += '<td>' + value
+                                                .maturity_date + '</td>';
+                                        fd_data += '<td>' + value
+                                                .matured_amt + '</td>';
+                                        fd_data += '<td>' + value
+                                                .security_to + '</td>';
+                                        fd_data += '<td>' + value
+                                                .bank_nm +
+                                                '</td>';
+                                        fd_data += '<td>' + value
+                                                .encash_date +
+                                                '</td>';
+                                        fd_data += '<td>' + value
+                                                .int_rate + '</td>';
+                                        fd_data += '<tr>';
+                                });
+                                $('#fd_table').append(fd_data);
+                        });
+
+                });
+        </script>
+
+
+        <script>
+                function myFunction() {
+                        var input1, filter1, table, tr, td1, i, txtValue1;
+                        var input2, filter2, td2, txtValue2;
+
+                        input1 = document.getElementById("sec_to");
+                        filter1 = input1.value.toUpperCase();
+
+                        input2 = document.getElementById("bnk_nm");
+                        filter2 = input2.value.toUpperCase();
+
+                        input3 = document.getElementById("fd_no");
+                        filter3 = input3.value.toUpperCase();
+
+                        table = document.getElementById("fd_table");
+                        tr = table.getElementsByTagName("tr");
+                        for (i = 0; i < tr.length; i++) {
+
+                                td1 = tr[i].getElementsByTagName("td")[5];
+                                td2 = tr[i].getElementsByTagName("td")[6];
+                                td3 = tr[i].getElementsByTagName("td")[1];
+
+                                if (td1 || td2 ) {
+                                        txtValue1 = td1.textContent || td1.innerText;
+                                        txtValue2 = td2.textContent || td2.innerText;
+                                        txtValue3 = td3.textContent || td3.innerText;
+
+                                        if ((txtValue1.toUpperCase().indexOf(filter1) > -1) && 
+                                                (txtValue2.toUpperCase().indexOf(filter2) > -1) && 
+                                                (txtValue3.toUpperCase().indexOf(filter3) > -1)) {
+
+                                                tr[i].style.display = "";
+                                        } else {
+                                                tr[i].style.display = "none";
+                                        }
+                                }
+                        }
+                }
+        </script>
+
+</body>
+
+</html>
