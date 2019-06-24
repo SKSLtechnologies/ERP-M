@@ -1,0 +1,84 @@
+
+* {
+    box-sizing: border-box;
+  }
+/* body {
+
+  padding-top: 110px;
+} */
+
+
+.form-label-group {
+  position: relative;
+  
+
+}
+
+.form-label-group > input,
+.form-label-group > label {
+  height: 2.5rem;
+   width:60%; 
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* color: red; */
+  pointer-events: none;
+  font-size: 11px;
+  transition: all 0.2s;
+
+}
+.form-label-group > input{
+  
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #666 !important;
+    font-size: 11px;
+  
+  } 
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+  
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label {
+    opacity: 1;
+    transition: all 0.2s;
+  font-size: 11px;
+  
+  /* color: green; */
+  
+}
+
+.form-label-group input:placeholder-shown:not(:focus) + *, .form-label-group select:placeholder-shown:not(:focus) + * {
+  font-size: 12px;
+  top: 0.75rem;
+}
+
+.form-label-group input:placeholder-shown:focus{
+    
+    border-bottom:2px solid #05668D !important;
+     
+  }
+  
+
+.form-label-group input, .form-label-group select {
+    padding-top: 1rem;
+  
+  }
