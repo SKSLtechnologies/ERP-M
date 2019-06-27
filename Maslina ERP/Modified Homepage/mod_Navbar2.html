@@ -33,8 +33,10 @@
 body{
 
 
-  background-color: rgba(173, 214, 230, 0.411);
+  /* background-color: rgba(173, 214, 230, 0.411); */
   background-image: url("picture4.jpg");
+
+  /* background-image: url("assets/logo/Logo1.JPG"); */
   
   
 }
@@ -51,14 +53,19 @@ body{
 }
 .navbar-brand {
     display: block;
-    width: 127px;
+    width: 215px;
     color: #d0a73f;
     text-decoration: none;
     font-weight: 600;
     font-size:1rem;
-
+    margin-left: -30px;
+    background-color: #fff;
+    height:74px;
+ 
 }
-
+.dropdown-item:hover{
+  color:red;
+}
 </style>
 
   </head>
@@ -68,9 +75,8 @@ body{
     <!-- Navbar-->
     <header class="navbar-wrapper navbar-sticky bg-dark text-white">
     
-        <div class="d-table-cell align-middle pr-md-3"><a class="navbar-brand mr-1" href="mod_Navbar2.html">
-          <!-- <img src="assets/logo/sksl_logo.jpg" alt="SKSL" style="height:50px;width:45px;"/> -->
-          S.K.Samanta &amp; Co.(P)
+        <div class="navbar-brand"><a href="mod_Navbar2.html">
+          <img src="assets/logo/company_logo.PNG" alt="SKSL" style="margin-top:7px;"/>
          </a></div>
        
         <div class="d-table-cell w-100 align-middle pl-md-3">
@@ -129,13 +135,12 @@ body{
                                             <div id="trans-submenu" class="collapse" data-parent="#accordion1">
                                               <ul>
                                                 <li><a  href="../Modified Voucher_list/Voucher.html">Voucher Entry</a></li>
-                                                <li><a href="../Modified Voucher_list/Bill_serial_insert.html">Bill Serial </a></li>
-                                                <li><a href="#">Party Bill </a></li>
-                                                <li><a href="#">Bank  Gurantee</a></li>
-                                                <li><a href="../Modified Voucher_list/Monthly_accounts_estimate.html">Monthly Estimate</a></li>
+                                                <li><a href="../Modified Voucher_list/mod_Bill_serial_insert.html">Bill Serial </a></li>
+                                                <li><a href="../ERP-A-master/BG Trans/index.html">Bank  Gurantee</a></li>
+                                                <li><a href="../Modified Voucher_list/mod_Monthly_accounts_estimate.html">Monthly Estimate</a></li>
                                                 <li><a href="#">RA Bill</a></li>
-                                                <li><a  href="#">Fixed Deposit</a></li>
-                                                <li><a href="#">Insurance Policy</a></li>
+                                                <li><a  href="../ERP-A-master/FD/index.html">Fixed Deposit</a></li>
+                                                <li><a href="../ERP-A-master/Insurance/index.html">Insurance Policy</a></li>
                                               </ul>    
                                           </div> 
                   
@@ -284,6 +289,7 @@ body{
         </div>
     
     </header>  
+    
   
     <script src="vendor.js"></script>
 

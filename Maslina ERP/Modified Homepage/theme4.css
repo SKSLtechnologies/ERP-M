@@ -171,7 +171,7 @@ sup {
 }
 
 a {
-    color: #ac32e4;
+    /* color: #ac32e4; */
     text-decoration: underline;
     background-color: transparent
 }
@@ -1702,9 +1702,9 @@ pre code {
     user-select: none;
     background-color: transparent;
     border: 1px solid transparent;
-    padding: 0 1.75rem;
+    /* padding: 0 1.75rem; */
     font-size: 1rem;
-    line-height: 44px;
+    /* line-height: 44px; */
     border-radius: 0;
     -webkit-transition: all 0.3s !important;
     transition: all 0.3s !important
@@ -1739,45 +1739,10 @@ fieldset:disabled a.btn {
     pointer-events: none
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #ac32e4;
-    border-color: #ac32e4
-}
 
-.btn-primary:hover {
-    color: #fff;
-    background-color: #9a1cd4;
-    border-color: #921ac9
-}
 
-.btn-primary:focus,
-.btn-primary.focus {
-    -webkit-box-shadow: 0 0 0 .2rem rgba(184, 81, 232, 0.5);
-    box-shadow: 0 0 0 .2rem rgba(184, 81, 232, 0.5)
-}
 
-.btn-primary.disabled,
-.btn-primary:disabled {
-    color: #fff;
-    background-color: #ac32e4;
-    border-color: #ac32e4
-}
 
-.btn-primary:not(:disabled):not(.disabled):active,
-.btn-primary:not(:disabled):not(.disabled).active,
-.show>.btn-primary.dropdown-toggle {
-    color: #fff;
-    background-color: #921ac9;
-    border-color: #8a19bd
-}
-
-.btn-primary:not(:disabled):not(.disabled):active:focus,
-.btn-primary:not(:disabled):not(.disabled).active:focus,
-.show>.btn-primary.dropdown-toggle:focus {
-    -webkit-box-shadow: 0 0 0 .2rem rgba(184, 81, 232, 0.5);
-    box-shadow: 0 0 0 .2rem rgba(184, 81, 232, 0.5)
-}
 
 .btn-secondary {
     color: #212529;
@@ -2747,14 +2712,14 @@ input[type="button"].btn-block {
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-    color: #ac32e4;
+    
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0)
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
-    color: #ac32e4;
+   
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0)
 }
@@ -12888,7 +12853,7 @@ li.dropdown-item:hover>a,
 li.dropdown-item:hover>a::after,
 li.dropdown-item.active>a,
 li.dropdown-item.active>a::after {
-    color: #ac32e4 !important
+    color: red !important;
 }
 
 .dropdown-item.has-children {
@@ -15525,7 +15490,7 @@ a.alert {
 .widget-custom-menu ul>li.active>a,
 .widget-categories ul>li:hover>a,
 .widget-categories ul>li.active>a {
-    color: #ac32e4 !important
+    color: red !important;
 }
 
 .widget-custom-menu>ul,
@@ -16966,7 +16931,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .navbar-brand {
     display: block;
-    width: 127px;
+    /* width: 127px; */
     color: #343b43;
     text-decoration: none
 }
