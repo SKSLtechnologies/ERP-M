@@ -1,0 +1,668 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	
+  <title>Mod Bill serial insert</title>
+
+  <link href="unmod_css.css" rel="stylesheet">
+  <link href="floating-labels.css" rel="stylesheet">
+  <link href="fontawesome-free-5.8.1-web/css/all.min.css" rel="stylesheet">
+
+
+
+  <!-- CSS for navbar -->
+
+  <link rel="stylesheet" media="screen" href="../Modified Homepage/theme4.css">
+
+  <link href="fontawesome-free-5.8.1-web/css/all.min.css" rel="stylesheet">
+  
+
+
+  <!-- custom CSS -->
+<style>
+body{
+    background: #fff;
+    
+}
+.container{
+    padding-top: 15px;
+}
+
+/* custom CSS for navbar */
+
+
+.bg-dark {
+  
+  background-color:rgb(3, 11, 51) !important
+}
+
+
+.nav-pills .nav-link:hover {
+  border-color: #d0a73f;
+  background-color: #d0a73f;
+  color:black !important
+}
+
+.clock {
+   
+   font-size: 11px;
+     letter-spacing: 1px;
+     
+ }
+ .date {
+   font-size: 11px;
+     letter-spacing: 1px;
+ }
+ .navbar-brand {
+    display: block;
+    width: 215px;
+    color: #d0a73f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size:1rem;
+    margin-left: -30px;
+    background-color: #fff;
+    height:78px;
+ 
+}
+.dropdown-item:hover{
+  color:red;
+}
+
+
+
+/* custom CSS for form */
+
+/* CSS for date */
+
+[type="date"] {
+  background:#fff url(icons/cal2.png) 97% no-repeat ;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+[id="Bill_date"]::-webkit-calendar-picker-indicator{
+        opacity: 1;
+}
+[id="Purchase_date"]::-webkit-calendar-picker-indicator{
+        opacity: 1;
+}
+
+ .custom-control-input:checked~.custom-control-label:before {
+
+        color:#fff;
+    background-color: #05668D;
+    border-color:  #9BC4CB;
+  
+}
+
+.btn-primary
+ {
+         color:#fff;
+         background-color: #05668D;
+         border-color: #05668D;
+    
+} 
+.btn-primary:hover {
+  
+       
+         background-color: #064789;
+         border-color: #064789;
+ 
+}
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: 0 0 0 0 #05668D;
+}
+.select2-container--bootstrap4 .select2-results__option--highlighted[aria-selected] {
+    background-color:  #05668D;
+    color: #fff;
+}
+
+
+.font-weight-bolder {
+    font-weight: 1000;
+    
+}
+
+#Bill_table > table {
+        position: relative;
+    background-color:  #05668D;
+    color:#fff;
+
+}
+
+table{
+        table-layout: fixed;
+        border-collapse: collapse;
+}
+
+.scrollbar{
+       
+position: relative;
+margin-top: -18px;
+height: 100px;
+overflow-y: auto;
+}
+.scrollbar table tbody tr td{
+        word-wrap: break-word;
+
+}
+.table-hover1 tr:hover {
+        color: black;
+        background-color:  #9BC4CB;
+        
+
+}
+
+/* disabled button */
+.btn-primary.disabled,
+.btn-primary:disabled{
+    color: #fff;
+    background-color: rgb(128, 125, 125);
+    border-color:  rgb(150, 146, 146);
+}
+
+
+
+
+
+
+</style>	
+</head>
+
+<body onload="countdown();">
+
+
+ <!-- Navbar-->
+ <header class="navbar-wrapper navbar-sticky bg-dark text-white">
+    
+        <div class="navbar-brand"><a href="../Modified Homepage/mod_Navbar2.html">
+        <img src="../Modified Homepage/assets/logo/company_logo.PNG" alt="SKSL" style="margin-top:7px;"/>
+        </a></div>
+                        
+   
+    <div class="d-table-cell w-100 align-middle pl-md-3">
+
+        <div class="navbar-top d-none d-lg-flex justify-content-end align-items-center">
+              <ul class="list-inline mb-0">
+                <li>
+                        <span style="font-size: 11px">Time left</span>
+                        <input id="minutes" style="width:15px; 
+                          border: none; font-size: 11px; 
+                          font-weight: bold; color: black; text-align: center" readonly>
+                          <span>:</span>
+                        <input id="seconds" style="width:15px; 
+                                border: none; font-size: 11px; 
+                                font-weight: bold; color: black; text-align: center" readonly> 
+
+                </li>
+                  <li>
+                    
+                    <span id="MyClockDisplay" class="clock" onload="showTime()"></span>
+                  </li>
+
+                  <li>
+                   
+                    <span id="MyDateDisplay" class="date" onload="showDate()"></span>
+                    
+                  </li>
+                <li class="dropdown-toggle mr-2"><a class="navbar-link" href="#"><i class="fas fa-user"></i>Test User</a>
+                  <div class="dropdown-menu right-aligned text-center" style="min-width: 100px;">
+                          <a class="dropdown-item" href="../Modified Homepage/AfterLogOut.html">Log out</a>
+                  </div>
+                </li>
+               
+              </ul>
+            </div>
+        
+
+      <div class="navbar justify-content-end justify-content-lg-between">
+       
+        <!-- Main Menu-->
+        <ul class="navbar-nav nav-pills d-none d-lg-block">
+          <!-- Home-->
+          <li class="nav-item"><a class="nav-link" href="../Modified Homepage/mod_Navbar2.html" style="color: #fff;"><i class="fa fa-home"></i>&nbsp;Home</a>
+          </li>
+           <!-- Finance-->
+           <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fas fa-coins"></i>&nbsp; Finance</a>
+           
+            <div class="dropdown-menu mega-dropdown">
+                   
+                        <div class="widget widget-custom-menu accordion-style-3">
+
+                                <ul  class="dropdown-menu" id="accordion1">
+                                             
+                                        <li class="dropdown-header font-weight-medium collapsed" href="#trans-submenu" data-toggle="collapse" aria-expanded="false">Accounts</li>
+                                        <div id="trans-submenu" class="collapse" data-parent="#accordion1">
+                                          <ul>
+                                            <li><a  href="../Modified Voucher_list/Voucher.html">Voucher Entry</a></li>
+                                            <li><a href="../Modified Voucher_list/mod_Bill_serial_insert.html">Bill Serial </a></li>
+                                            <li><a href="#">Bank  Gurantee</a></li>
+                                            <li><a href="../Modified Voucher_list/mod_Monthly_accounts_estimate.html">Monthly Estimate</a></li>
+                                            <li><a href="#">RA Bill</a></li>
+                                            <li><a  href="#">Fixed Deposit</a></li>
+                                            <li><a href="#">Insurance Policy</a></li>
+                                          </ul>    
+                                      </div> 
+              
+                                        <li class="dropdown-header font-weight-medium collapsed" href="#inv-submenu" data-toggle="collapse" aria-expanded="false">Inventory</li>
+                                        <div id="inv-submenu" class="collapse" data-parent="#accordion1">
+                                            <ul>
+                                              <li><a  href="#">Voucher Entry</a></li>
+                                              <li><a href="#">Party Bill </a></li>
+                                              <li><a href="#">Bank  Gurantee</a></li>
+                                              <li><a href="#">RA Bill</a></li>
+                                              <li><a  href="#">Fixed Deposit</a></li>
+                                              <li><a href="#">Insurance Policy</a></li>
+                                            </ul>    
+                                        </div> 
+              
+                                        <li class="dropdown-header font-weight-medium collapsed" href="#mech-submenu" data-toggle="collapse" aria-expanded="false" >Mechanical</li>
+                                        <div id="mech-submenu" class="collapse" data-parent="#accordion1">
+                                            <ul>
+                                              <li><a  href="#">Voucher Entry</a></li>
+                                              <li><a href="#">Party Bill </a></li>
+                                              <li><a href="#">Bank  Gurantee</a></li>
+                                              <li><a href="#">RA Bill</a></li>
+                                              <li><a  href="#">Fixed Deposit</a></li>
+                                              <li><a href="#">Insurance Policy</a></li>
+                                            </ul>    
+                                        </div> 
+              
+                                        <li class="dropdown-header font-weight-medium collapsed" href="#cb-submenu" data-toggle="collapse" aria-expanded="false">Client Billing</li>
+                                        <div id="cb-submenu" class="collapse" data-parent="#accordion1">
+                                            <ul>
+                                              <li><a  href="#">Voucher Entry</a></li>
+                                              <li><a href="#">Party Bill </a></li>
+                                              <li><a href="#">Bank  Gurantee</a></li>
+                                              <li><a href="#">RA Bill</a></li>
+                                              <li><a  href="#">Fixed Deposit</a></li>
+                                              <li><a href="#">Insurance Policy</a></li>
+                                            </ul>    
+                                        </div> 
+                                      
+                                      </ul>
+            
+                            </div>
+                       
+                </div>
+
+          </li>
+         
+          <!-- Engineering-->
+          
+          <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Engineering</a>
+
+            <div class="dropdown-menu mega-dropdown">
+                  <div class="widget widget-custom-menu accordion-style-3">
+
+                          <ul  class="dropdown-menu" id="accordion2">
+                                       
+                                  <li class="dropdown-header font-weight-medium  collapsed" href="#proj-submenu" data-toggle="collapse" aria-expanded="false">Project Costing</li>
+                                  <div id="proj-submenu" class="collapse" data-parent="#accordion2">
+                                    <ul>
+                                      <li><a  href="#">Tender Rate Annually</a></li>
+                                      <li><a href="#">Project Reports</a></li>
+                                      <li><a href="#">Drawings &amp; Activity</a></li>
+                                      <li><a href="#">Profile Settings</a></li>
+                                      
+                                    </ul>    
+                                </div> 
+    
+                           </ul>
+      
+                   </div>
+               
+           </div>
+
+          </li>
+
+
+          <!-- HR and admin-->
+
+          <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;HR &amp; Admin</a>
+
+                
+            <div class="dropdown-menu mega-dropdown">
+                <div class="widget widget-custom-menu accordion-style-3">
+
+                        <ul  class="dropdown-menu" id="accordion3">
+                                     
+                                <li class="dropdown-header font-weight-medium  collapsed" href="#payroll-submenu" data-toggle="collapse" aria-expanded="false">Payroll</li>
+                                <div id="payroll-submenu" class="collapse" data-parent="#accordion3">
+                                  <ul>
+                                    <li><a  href="#">HR &amp; Payroll Master </a></li>
+                                    <li><a href="#">HR &amp; Payroll Transaction</a></li>
+                                    <li><a href="#">HR &amp; Payroll Reports</a></li>
+                                    <li><a href="#">Master Reports</a></li>
+                                    <li><a href="#">Utility</a></li>
+                                    
+                                  </ul>    
+                                   </div> 
+  
+                          </ul>
+    
+                 </div>
+           </div>
+
+          </li>
+          <!-- Labor-->
+          <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fas fa-fist-raised"></i>&nbsp;Labor</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="#">Labor Transaction Entry</a></li>
+              <li class="dropdown-item"><a href="#">Labour Bills</a></li>
+              <li class="dropdown-item"><a href="#">Reports</a></li>
+              <li class="dropdown-item"><a href="#">Master List</a></li>
+              <li class="dropdown-item"><a href="#">Utility</a></li>
+             
+            </ul>
+          </li>
+          <!-- Master-->
+          <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-list" aria-hidden="true"></i>&nbsp;Master</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="#">Primary Master</a></li>
+                  <li class="dropdown-item"><a href="#">Account Master</a></li>
+                  <li class="dropdown-item"><a href="#">Inventory Master</a></li>
+                  <li class="dropdown-item"><a href="#">PO Master</a></li>
+                  <li class="dropdown-item"><a href="#">Labor Master</a></li>                      
+              
+            </ul>
+          </li>
+          <!-- Utility-->
+
+          <li class="nav-item dropdown-toggle"><a class="nav-link"><i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;Utility</a>
+            <ul class="dropdown-menu">
+              
+                  <li class="dropdown-item"><a href="#">Access Control</a></li>
+                  <li class="dropdown-item"><a href="#">User Control</a></li>
+                  
+              
+            </ul>
+          </li>          
+
+        </ul>
+        <div>
+        
+         
+        </div>
+      </div>
+    </div>
+
+</header>  
+
+
+
+
+
+  <div class="container">
+      
+         <!-- common header option -->
+
+         <form class="p-2 mb-2 text-dark" style="background-color:#62B6CB;">
+                        <div class="form-row">
+                                <div class="col-md-2">
+                                        <label class="form-label">Financial year</label>
+                                                <select class="form-control select2" id="Fin_year" data-toggle="select2">
+                                                        <option value="1920">1920</option>
+                                                        <option value="1819">1819</option>
+                                                        <option value="1718">1718</option>
+                                                        <option value="1617">1617</option>
+                                                        <option value="1516">1516</option>
+                                                        <option value="1415">1415</option>
+                                                        <option value="1314">1314</option>
+                                                        <option value="1213">1213</option>
+                                                        <option value="1112">1112</option>
+                                                        <option value="1011">1011</option>
+                                                        <option value="0910">0910</option>
+                                                        <option value="0809">0809</option>
+                                                </select>
+                
+                                </div>
+                                
+                                <div class="col-md-2 offset-md-4">
+                                                <label class="form-label">Location code</label>
+                                                <select class="form-control select2" id="Location_code" data-toggle="select2">
+                                                        <option value="0011">Kolkata</option>
+                                                        <option value="0012">Jharkhand</option>
+                                                        <option value="0014">Durgapur</option>
+                                                        <option value="0021">New Delhi</option>
+                                                        <option value="0093">Nagpur</option>
+                                                        <option value="0095">Bilaspur</option>
+                                                </select>
+                
+                                 </div>
+
+                                 <div class="col-md-2">
+                                                <label class="form-label">Project code</label>
+                                                    <select class="form-control select2" id="Project_code" data-toggle="select2"> 
+                                                            <option value="47">47</option>
+                                                            <option value="84">84</option>
+                                                            <option value="161">161</option>
+                                                            <option value="165">165</option>
+                                                            <option value="168">168</option>
+                                                            <option value="169">169</option>     
+                                                    </select>
+                    
+                                </div>
+
+                                <div class="col-md-2">        
+                                        <label class="form-lable">Receipt date</label>
+                                        <input class="form-control" type="date" id="Receipt_date"/>
+                                </div>
+        
+                        </div>
+        </form>
+                
+      
+        
+        <div class="card">
+                <div class="card-header text-white" style="background-color: #05668D ;">
+                        <div class="row no-gutters">
+                                <div class="col-md-3">BILL SERIAL INSERT ENTRY</div>
+                        </div>
+                </div>
+
+            <div class="card-body">
+            
+                        <form id="BillSerialForm">
+                            
+                                <div class="form-row mt-2 ml-5">
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <input placeholder="Last serial no" type="text" id="Last_srl_no" >
+                                                        <label>Last serial no</label>                    
+                                                </div>
+                                        </div>
+
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <input  placeholder="Bill serial no" type="text" id="Bill_srl_no" onkeyup="sum();" readonly>
+                                                        <label>Bill serial no</label>                    
+                                                </div>
+                                        </div>           
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <input placeholder="Party code" list="SelectedPartycode" id="Party_code">
+                                                        <label>Party code</label>
+                                                        <datalist id="SelectedPartycode">
+                                                            <option value="one"></option>
+                                                            <option value="two"></option>
+                                                            <option value="three"></option>
+                                                            <option value="four"></option>
+                                                        </datalist>
+                                                </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <input placeholder="Account code" list="SelectedAccountcode" id="Account_code">
+                                                        <label>Account code</label>
+                                                        <datalist id="SelectedAccountcode">
+                                                            <option value="one"></option>
+                                                            <option value="two"></option>
+                                                            <option value="three"></option>
+                                                            <option value="four"></option>
+                                                        </datalist>
+                                                </div>
+                                        </div>
+                                         
+                                </div>
+                     
+                                <!-- end of first group -->
+                                
+                                <div class="form-row ml-5">
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <input placeholder="Bill no" type="text" id="Bill_no">
+                                                        <label>Bill no</label>                    
+                                                </div>
+                                        </div>  
+                                        
+                                        
+                                        <div class="col-md-3">
+                                                <div class="form-label-group"> 
+                                                        <input type="date" id="Bill_date"/>
+                                                        <label>Bill date</label>
+                                                </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                                <input type="text"  placeholder="Bill amount" id="Bill_amount">
+                                                                <label>Bill amount</label>
+                                                </div>
+                                                    
+                                        </div>    
+
+                                        <div class="col-md-3">
+                                                <div class="form-label-group">
+                                                        <div class="form-label-group">
+                                                            <input placeholder="Narration" id="Narration">
+                                                                <label>Narration</label>
+                                                        </div>               
+                                                </div>
+                                            </div>   
+                                        
+                                 </div>      
+                            
+                                <!-- end of second group -->
+                                
+                        <div class="form-row ml-5">    
+                                <div class="col-md-3">
+                                        <div class="form-label-group">
+                                                <input placeholder="Purchase order no" type="text" id="Purchase_order">
+                                                <label>Purchase order no</label>                    
+                                        </div>
+                                </div>      
+                                
+                                
+                                <div class="col-md-3">
+                                        <div class="form-label-group"> 
+                                                <input type="date" id="Purchase_date" />
+                                                <label>Purchase order date</label>
+                                        </div>
+                                </div>
+                                 
+                                <div class="col-md-3">
+                                        <div class="form-label-group">
+                                                        <input type="text" placeholder="Purchase Order amount" id="Purchase_amount">
+                                                        <label>Purchase order amount</label>
+                                        </div>
+                                            
+                                </div>
+
+                                <div class="col-md-3">
+
+                                        <input type="button" value="Add Voucher" id="AddVoucherBtn" class="btn btn-primary mt-2" />
+                                </div>      
+
+                        </div>
+                    <!-- end of third group -->  
+
+        
+                        <!-- table that displays form elements -->
+                    
+                <div id="Bill_table" style="display:none" class="mt-2">
+                
+                                
+                    
+                                                <table class="table table-sm table-bordered" >
+                                                    <thead>
+                                                                <tr>
+                                                                        <th>Serial no</th>
+                                                                        <th>Account code</th>
+                                                                        <th>Bill no</th>
+                                                                        <th>Bill date</th>
+                                                                        <th>Narration</th>
+                                                                        <th>Bill amount</th>
+                                                                        <th>Bill serial no</th>
+                                                                        <th>Receipt date</th>
+                                                                        <th>Action</th>
+                                                                                    
+                                                                </tr>
+                                                        </thead>
+                    
+                                                </table>
+
+                                                 <!-- scrollable table rows -->
+                                                <div class="scrollbar">
+                                                                <table class="table table-sm table-bordered table-hover1" id="Bill_display_table">
+                                                                <tbody>
+                                                                                
+                                                                </tbody>
+                                                                </table>
+                                                </div>
+                                  
+
+                                                             
+                </div>
+                </form>
+            </div>
+        </div>
+
+        <input class="btn btn-primary offset-5 mt-n4" type="submit" id="Bill_SubmitBtn" value="Submit Voucher" disabled>
+
+
+    
+</div>
+<!-- end of container -->
+
+
+<!---------------js for navbar ------------------->
+
+<script src="../Modified Homepage/vendor.js"></script>
+<script src="../Modified Homepage/homepage_cal.js"></script>
+
+<script>
+        //collapse accordion when it looses focus
+        $('.dropdown-menu').mouseleave(function(){
+           $('.collapse').collapse('hide');
+           });
+ </script>
+     
+
+<!----------------- js for form --------------------->
+
+<script src="app.js"></script>
+<script src="jquery.maskedinput.js"></script>
+
+<script src="jquery.clearform.js"></script>
+
+<script src="mod_billserial_cal.js"></script>
+
+        
+</body>
+</html>
